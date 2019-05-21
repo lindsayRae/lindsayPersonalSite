@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/custom.css">
+        <link rel="stylesheet" href="./css/effects.css">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </head>
@@ -27,21 +28,26 @@
                 <span></span>
             </label>
             <nav class="header__nav">
-                <!-- <div class="header__nav-item">
-                    <a href="./works.html" class="header__nav-link text--uppercase">works</a>
-                </div> -->
+                
                 <div class="header__nav-item">
                     <a href="./index.html" class="header__nav-link text--uppercase">home</a>
                 </div>
                 <div class="header__nav-item">
+                    <a href="./index.html#projects" class="header__nav-link text--uppercase">projects</a>
+                </div>
+                <div class="header__nav-item">
                     <a href="./index.html#about" class="header__nav-link text--uppercase">about</a>
                 </div>
+               
                 <div class="header__nav-item">
                     <a href="./blog.html" class="header__nav-link text--uppercase">blog</a>
                 </div>
-                <div class="header__nav-item">
+                <!-- <div class="header__nav-item">
                     <a href="./resources.html" class="header__nav-link text--uppercase">code resources</a>
-                </div>
+                </div> -->
+                <div class="header__nav-item">
+                        <a href="./index.html" class="header__nav-link text--uppercase">resume</a>
+                    </div>
                 <div class="header__nav-item">
                     <a href="./index.html#contacts" class="header__nav-link text--uppercase">contact</a>
                 </div>
@@ -84,7 +90,7 @@
                                 <div class="row">
                                     <div class="col col--md-6">
                                         <h2 class="home__welcome-title">Hello<br>
-                                            I'm Lindsay</h2>
+                                            I'm <span class="effect-shine">Lindsay</span></h2>
                                     </div>
                                     <div class="col col--md-6">
                                         <p class="home__welcome-content">Welcome to my site! I started my coding journey back in July 2017 after I attended a 
@@ -100,119 +106,123 @@
                     </div>
                 </div>
             </section>
-            <section class="section section--portfolio home__portfolio">
+
+            <section class="section section--portfolio home__portfolio" id="projects">
                 <div class="container">
-                    <!-- portfolio -->
-                    
-                    
+                    <!-- portfolio -->                
+                    <div class="row">
+                        <div class="col col--md-12">
+                            <h2 class="home__contacts-title">projects</h2>
+                        </div>
+                    </div>
 
 
-<div class="portfolio portfolio--grid">
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Dostoyevsky website">
+                <div class="portfolio portfolio--grid">
+
+                        <div class="portfolio__item">
+                                <a href="./project.html" target="_top" class="portfolio__item-link">
+                                    <div class="portfolio__item-img">
+                                        <img src="http://placehold.it/580x432" alt="Architecture magazine">
+                                    </div>
+                                    <div class="portfolio__item-title">
+                                        <h5 class="portfolio__title">Professional Work</h5>
+                                        <small class="portfolio__subtitle">Point of Sale System</small>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                        <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="Salon Website">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Salon Website</h5>
+                                    <small class="portfolio__subtitle">Shirley Sei Bella</small>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="game">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Game</h5>
+                                    <small class="portfolio__subtitle">Hero vs Monster</small>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="Tourist website">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Fitness Tracker</h5>
+                                    <small class="portfolio__subtitle">My PRs</small>
+                                </div>
+                            </a>
+                        </div>
+                    
+                      
+                    
+                        <!-- <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="Cafe">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Cafe</h5>
+                                    <small class="portfolio__subtitle">Icecream</small>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="Architector&#39;s portfolio">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Architector&#39;s portfolio</h5>
+                                    <small class="portfolio__subtitle">Jogn Doe</small>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="Hotel website">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Hotel website</h5>
+                                    <small class="portfolio__subtitle">National tourism</small>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        <div class="portfolio__item">
+                            <a href="./project.html" target="_top" class="portfolio__item-link">
+                                <div class="portfolio__item-img">
+                                    <img src="http://placehold.it/580x432" alt="Fashion Magazine">
+                                </div>
+                                <div class="portfolio__item-title">
+                                    <h5 class="portfolio__title">Fashion Magazine</h5>
+                                    <small class="portfolio__subtitle">Favorites</small>
+                                </div>
+                            </a>
+                        </div>                    -->
+                   
                 </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Dostoyevsky website</h5>
-                    <small class="portfolio__subtitle">Dostoyevsky museum</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Mobile app">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Mobile app</h5>
-                    <small class="portfolio__subtitle">Flowers shop</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Tourist website">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Tourist website</h5>
-                    <small class="portfolio__subtitle">National tourism</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Architecture magazine">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Architecture magazine</h5>
-                    <small class="portfolio__subtitle">Architecture magazine</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Cafe">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Cafe</h5>
-                    <small class="portfolio__subtitle">Icecream</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Architector&#39;s portfolio">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Architector&#39;s portfolio</h5>
-                    <small class="portfolio__subtitle">Jogn Doe</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Hotel website">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Hotel website</h5>
-                    <small class="portfolio__subtitle">National tourism</small>
-                </div>
-            </a>
-        </div>
-    
-        <div class="portfolio__item">
-            <a href="./project.html" target="_top" class="portfolio__item-link">
-                <div class="portfolio__item-img">
-                    <img src="http://placehold.it/580x432" alt="Fashion Magazine">
-                </div>
-                <div class="portfolio__item-title">
-                    <h5 class="portfolio__title">Fashion Magazine</h5>
-                    <small class="portfolio__subtitle">Favorites</small>
-                </div>
-            </a>
-        </div>
-    
-    <div class="portfolio__more">
-        <button class="btn portfolio__more-btn">Show more</button>
-    </div>
-</div>
 
                     <!-- end of portfolio -->
                 </div>
             </section>
+           
             <section class="section home__about" id="about">
                 <div class="container">
                     <div class="row">
@@ -222,57 +232,101 @@
                                     <h2 class="home__about-title">About me</h2>
                                 </div>
                                 <div class="col col--md-6">
-                                    <p class="home__about-content">I am a wife and pitbull mom who loves living a healthy and active life. I recently became scuba certified and took my fear of being on the open water and literally just dove right in to appreciate the beautiful secret world underneath. I love voleyball, lifting weights and silly evenings at home with my husband.</p>
+                                    <p class="home__about-content">I am a wife and pitbull mom who loves living a healthy and active life. 
+                                        I recently became scuba certified and took my fear of being on the open water and literally just dove right in to appreciate the beautiful secret world underneath. 
+                                        I love voleyball, lifting weights and silly evenings at home with my husband. I am also currently pursuing my Associates in Science Degree in Information Systems: Programming in C++ to gain a better knowledge of all around development.</p>
                                 </div>
                                 <div class="col col--md-6">
                                     <figure class="home__about-figure">
                                         <img src="img/lindsay720x544jpg.jpg" alt="My photo">
                                     </figure>
                                 </div>
-                                <div class="col col--md-6">
+                                <div class="col col--md-2">
                                     <h3 class="home__about-skills-title">Skills</h3>
-                                    <!-- skills -->
-                                    
+                                    <!-- skills -->                            
 
-
-
-    <ul class="skills">
-        <li class="skills__item">
-            <div class="skills__title">Javascript</div>
-            <div class="skills__value">80%</div>
-            <div class="skills__progress"><span style="right:20%;"></span></div>
-        </li>
-        <li class="skills__item">
-            <div class="skills__title">HTML &amp; CSS</div>
-            <div class="skills__value">90%</div>
-            <div class="skills__progress"><span style="right:10%;"></span></div>
-        </li>
-        <li class="skills__item">
-            <div class="skills__title">Bootstrap</div>
-            <div class="skills__value">90%</div>
-            <div class="skills__progress"><span style="right:10%;"></span></div>
-        </li>
-    
-        <li class="skills__item">
-            <div class="skills__title">UX &amp; UI</div>
-            <div class="skills__value">70%</div>
-            <div class="skills__progress"><span style="right:30%;"></span></div>
-        </li>
-    
-        
-    
-        
-    
-</ul>
+                                    <ul class="skills">
+                                        <li class="skills__item">
+                                            <div class="skills__title">Javascript - ES6</div>                                            
+                                        </li>
+                                        <li class="skills__item">
+                                            <div class="skills__title">jQuery</div>                                            
+                                        </li>
+                                        <li class="skills__item">
+                                            <div class="skills__title">HTML &amp; CSS</div>                                            
+                                        </li>
+                                        <li class="skills__item">
+                                            <div class="skills__title">Bootstrap 3 & 4</div>                                          
+                                        </li>                                    
+                                        <li class="skills__item">
+                                            <div class="skills__title">React</div> 
+                                        </li>                                
+                                                                            
+                                    </ul>
 
 
                                     <!-- end of skills -->
                                 </div>
+                                <div class="col col--md-2">
+                                        <h3 class="home__about-skills-title">Tools</h3>
+                                        <!-- tools -->                             
+
+                                        <ul class="skills">
+                                            <li class="skills__item">
+                                                <div class="skills__title">Webpack</div>                                            
+                                            </li>
+                                            <li class="skills__item">
+                                                <div class="skills__title">Lucid Charts</div>                                            
+                                            </li>
+                                            <li class="skills__item">
+                                                <div class="skills__title">Balsamic</div>                                            
+                                            </li>
+                                            <li class="skills__item">
+                                                <div class="skills__title">Postman</div>                                          
+                                            </li>                                    
+                                            <li class="skills__item">
+                                                <div class="skills__title">GitHub</div> 
+                                            </li>                                
+                                                                                
+                                        </ul>
+    
+    
+                                        <!-- end of tools -->
+                                </div>
+
+                                <div class="col col--md-2">
+                                        <h3 class="home__about-skills-title">Classes</h3>
+                                        <!-- classes -->                             
+
+                                        <ul class="skills">
+                                            <li class="skills__item">
+                                                <div class="skills__title">Python</div>                                            
+                                            </li>
+                                            <li class="skills__item">
+                                                <div class="skills__title">PHP</div>                                            
+                                            </li>
+                                            <li class="skills__item">
+                                                <div class="skills__title">C++</div>                                            
+                                            </li>
+                                            <li class="skills__item">
+                                                <div class="skills__title"></div>                                          
+                                            </li>                                    
+                                            <li class="skills__item">
+                                                <div class="skills__title"></div> 
+                                            </li>                                
+                                                                                
+                                        </ul>
+    
+    
+                                        <!-- end of classes -->
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+             
             <section class="section section--blog blog-section home__blog">
                 <div class="container">
                     <div class="row">
@@ -289,7 +343,7 @@
                                             <p class="home__blog-preview-date">Jan 23, 2018</p>
                                         </a>
                                         <div class="home__blog-title">
-                                            <h2 class="home__blog-title-text">Blog: </h2>
+                                            <h2 class="home__blog-title-text">Blog</h2>
                                             <h3 class="home__blog-preview-title ">No Crying in Coding</h3>
 
                                             <a href="./blog.html" class="btn home__blog-link">View all posts</a>

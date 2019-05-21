@@ -1810,14 +1810,15 @@ footer a {
     margin-top: 12px; }
 
 .home__portfolio {
-  margin-top: -152px;
+
   margin-bottom: 56px;
   z-index: 1;
   position: relative; }
 
 .home__about {
   padding-top: 136px;
-  margin-bottom: 192px; }
+  margin-bottom: 56px;
+  position: relative; }
   .home__about-title {
     font-weight: 500;
     font-size: 74px;
@@ -1843,7 +1844,8 @@ footer a {
     margin-bottom: 20px; }
 
 .home__blog {
-  margin-bottom: 56px; }
+  margin-bottom: 56px;
+  padding-top: 136px; }
   .home__blog-wrapper {
     display: -webkit-box;
     display: -webkit-flex;
