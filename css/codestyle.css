@@ -1,0 +1,25 @@
+
+
+code.files {
+    color: rgb(247, 44, 230);
+  }
+section.wrapper {
+    background-color: #505050;
+    color: white;
+}
+
+code.error {
+  color: rgb(184, 41, 41);
+}
+
+code.command {
+  color: rgb(93, 201, 5)
+}
+code.object {
+  color: rgb(5, 106, 201)
+}
+
+li {  
+  font-size: 16px; 
+  line-height: 32px;
+}

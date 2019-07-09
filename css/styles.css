@@ -931,7 +931,7 @@ ul.list {
   display: -ms-flexbox;
   display: flex;
   z-index: 1000;
-  background-color: transparent;
+  background-color: rgba(34, 34, 34, 0.89);
   -webkit-transition: background 0.2s ease-in-out, top 0.2s ease-in-out;
   -o-transition: background 0.2s ease-in-out, top 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out, top 0.2s ease-in-out;

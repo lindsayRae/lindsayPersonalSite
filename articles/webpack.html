@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Getting Started with Webpack</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../../css/codestyle.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- header -->
+    
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__menu">
+            <input type="checkbox" id="menu-burger" class="header__menu-status" hidden/>
+            <label for="menu-burger" class="header__burger">
+                <span></span>
+            </label>
+            <nav class="header__nav">
+                <div class="header__nav-item">
+                    <a href="../index.html" class="header__nav-link text--uppercase">home</a>
+                </div>
+                <div class="header__nav-item">
+                    <a href="../index.html#projects" class="header__nav-link text--uppercase">projects</a>
+                </div>
+                <div class="header__nav-item">
+                    <a href="../index.html#about" class="header__nav-link text--uppercase">about</a>
+                </div>
+               
+                <div class="header__nav-item">
+                    <a href="../blog.html" class="header__nav-link text--uppercase">blog</a>
+                </div>
+                <!-- <div class="header__nav-item">
+                    <a href="./resources.html" class="header__nav-link text--uppercase">code resources</a>
+                </div> -->
+                <div class="header__nav-item">
+                        <a href="../index.html" class="header__nav-link text--uppercase">resume</a>
+                    </div>
+                <div class="header__nav-item">
+                    <a href="../index.html#contacts" class="header__nav-link text--uppercase">contact</a>
+                </div>
+            </nav>
+            <div class="header__logo">
+                <a href="../index.html" class="logo">
+                    Lindsay Aiello
+                </a>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+    <!-- end of header -->
+
+    <!-- socials -->
+    
+    <div class="socials">
+            <nav class="socials__nav">
+                <div class="socials__nav-item">
+                    <a href="https://github.com/lindsayRae" class="socials__link" target="_blank">LinkedIn</a>
+                </div>
+                <div class="socials__nav-item">
+                    <a href="https://github.com/lindsayRae" class="socials__link" target="_blank">GitHub</a>
+                </div>        
+            </nav>
+    </div>
+
+
+    <!-- end of socials -->
+    <div class="article">
+        <div class="container container--xl">
+            <div class="row">
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <h1 class="page__title article__title">Getting Started with Webpack</h1>
+                    <div class="page__subtitle article__subtitle">
+                        <div class="article__date">Jan 23, 2018</div>                       
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="article__content">
+                        <div class="row">
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Intro</h5>
+                                <div class="article__text">                                                                   
+                                    <p>Today we are going to talk briefly about what webpack is and specifically I am going to do a walk through on how to set up your first Webpack project. For this article you need to already know some basics like: HTML, writing simple JS functions that can print a string to the console, how to view your code in the browser and lastly you must already have Node Package Manager installed. If you need NPM please stop here and download/familiarize yourself with it before you can continue with this tutorial </p>
+                                    
+                                    <p>Webpack is a module bundler that runs during the development process. This is useful because applications are much more complex than they used to be. We have more script and css files and more dependencies. When we use something like webpack, it bundles up our files and we only have to reference that bundled file instead of all of the separate files. You can use Webpack for your JavaScript and your CSS but today I am just going to talk about JS. 
+                                    We will walk through a step by step process on setting up the basics of Webpack that can get you started. to get you started on Webpack. 
+                                    </p>                                    
+                                </div>
+                            </div>
+                            <!-- <div class="col col--lg-10 col--lg-offset-1">
+                                <div class="article__image">
+                                    <figure>
+                                        <img src="http://placehold.it/1920x1120" alt="">
+                                    </figure>
+                                </div>
+                            </div> -->
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Prove Why Webpack is Cool</h5>
+                                <div class="article__text">
+                                    <p>I want you to do a small walk through of how scoping and asynchronous loading works. Create an <code class="files">index.html</code> file and add your normal boilerplate. Then create a <code class="files">src</code> folder and in that add <code class="files">index.js</code> file and <code class="files">test.js</code> file. Add the reference to the js files listing <code class="files">./src/index.js</code> first in the HTML. In the <code class="files">test.js</code> create a function that prints a string in the console. My function is called sayHello and will print a message in the console when it is called. Call this function in the <code class="files">index.js</code> file </p>
+                                   <section class="wrapper">
+                                        <pre><code class="language-html"><!DOCTYPE+html></code></pre><br>
+                                        <code class="language-html">&lt;html lang="en"&gt;</code><br>
+                                        <code>
+                                                &lt;!DOCTYPE html&gt;
+                                                &lt;html lang=&quot;en&quot;&gt;
+                                                &lt;head&gt;
+                                                   &lt;meta charset=&quot;UTF-8&quot;&gt;
+                                                   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                                                   &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+                                                   &lt;title&gt;Blog- Webpack&lt;/title&gt;
+                                                &lt;/head&gt;
+                                                &lt;body&gt;
+                                                   &lt;h1&gt;Webpack instructions&lt;/h1&gt;
+                                                
+                                                   &lt;script src=&quot;./src/index.js&quot;&gt;&lt;/script&gt;
+                                                   &lt;script src=&quot;./src/test.js&quot;&gt;&lt;/script&gt;  
+                                                       
+                                                &lt;/body&gt;
+                                                &lt;/html&gt;
+                                        </code>
+                                        <!-- <code class="language-html"> &lt;head&gt;</code><br>
+                                        <code class="language-html">&lt;meta charset="UTF-8"&gt;</code><br>
+                                        <code class="language-html"> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
+                                        <code class="language-html">&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;</code><br>
+                                        <code class="language-html">&lt;title>Blog- Webpack&lt;/title&gt;</code><br>
+                                        <code class="language-html">&lt;/head&gt; </code><br>
+                                        <code class="language-html">&lt;body&gt; </code><br>
+                                        <code class="language-html">&lt;h1>Webpack instructions&lt;/h1&gt;</code><br>
+                                            
+                                        <code class="language-html">&lt;script src="./src/index.js"&gt; &lt;/script&gt;</code><br>
+                                        <code class="language-html">&lt;script src="./src/test.js"&gt; &lt;/script&gt; </code><br>
+                                                   
+                                        <code class="language-html">&lt;/body&gt;</code><br>
+                                        <code class="language-html">&lt;/html&gt;</code><br> -->
+                                         <!-- <iframe src="https://codepen.io/lindsayrae/embed/jjQZpQ" height="350px" width="100%"></iframe>                                                                -->
+                                                                
+                                      
+                                   </section>
+                                   <p>What you should see in the console is an error like this:  <code class="error">Uncaught ReferenceError: sayHello is not defined </code>This is to be expected because the order your list your script file matters. <code class="files">index.js</code> is a dependency of <code class="files">test.js</code>. You can’t call the function in the first file before it is declared it in the second file. Go ahead and switch the script tags in the HTML so <code class="files">test.js</code> is referenced first. Reload the browser and your code should work now. Imagine your application has over 20 script files (which would be very common) it can be very challenging to keep it all straight, especially when you have dependencies in your logic. We are not going to spend much more time on this concept but the point being is that with a bundler like Webpack, you don't have to worry about this. Read on to see a step by step instructions on setting up Webpack. </p>
+                                </div>
+                            </div>
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Set Up Locally</h5>
+                                <div class="row">
+                                <div class="col-md-6">
+                                    <div class="article__text">
+                                    
+                                        <ol>
+                                            <li>Initialize NPM. Open up your terminal. If you are using VSCode shortcut is <code class="command">ctrl+shift+`</code></li>
+                                            <ul><li>Enter in the command line: <code class="command">npm init -y</code></li></ul>
+                                            <p>This pulls in the default <code class="files">package.json</code> for our program. You will see this file added to the root level </p>
+                                            <li>Install Webpack:</li>
+                                            <ul><li>Enter in the command line: <code class="command">npm install webpack webpack-cli --save-dev</code></li></ul>
+                                            <p>This is saved as a development dependency.<br>
+                                                Added the <code class="files">node_modules</code> folder and <code class="files">package-lock.json</code> file
+                                            </p>                                        
+                                        
+                                        <p>** Note: I am using a plugin from VSCode called ‘Simple Icons’ for my icons</p>
+                                        <img>
+                                            <li>Create a <code class="files">webpack.config.js</code> file in the root directory of project (meaning same level as your index.html). This is where we will specify our configurations. We need to require ‘path’ which is module core element from <code class="files">Node.js</code>. You can read more about path <a href="https://nodejs.org/api/modules.html" target="_blank">here</a> with their docs if you would like.  Create a <code class="object">module.exports</code> object. In this object we need to create an <code class="object">entry</code> point, an <code class="object">output</code> and a <code class="object">mode</code></li>    
+
+                                    
+                                    <code>
+                                            // webpack.config.js 
+
+                                            const path = require('path');      // import path from Node.js
+                                            module.exports = {
+                                               entry: './src/index.js',        // default entry point  
+                                               output: {                       // where everything else goes
+                                                   filename: 'bundle.js',
+                                                   path: path.resolve(__dirname, './dist')   
+                                                        // absolute path (__ currentDirectory, relativePathToDistFolder )
+                                               },                                // webpack will auto create this
+                                               mode: 'none' // non is default, can add ‘production’ or ‘development’ 
+                                            }                                        
+
+                                    </code>
+
+                                    <li>Go to <code class="files">package.json</code> file and specify a script: “build”: “webpack”. Don’t forget to add the comma after the “test” value. </li>
+                                
+                                <code>
+                                    
+                                    //package.json
+
+                                    {
+                                        "name": "Webpack",
+                                        "version": "1.0.0",
+                                        "description": "",
+                                        "main": "index.js",
+                                        "scripts": {
+                                        "test": "echo \"Error: no test specified\" && exit 1", // this test was auto-generated and doesn't do anything
+
+                                        "build": "webpack"  // everytime we run this script it will run webpack
+                                        
+                                        },
+                                        "keywords": [],
+                                        "author": "",
+                                        "license": "ISC",
+                                        "devDependencies": {
+                                        "webpack": "^4.35.0",
+                                        "webpack-cli": "^3.3.5"
+                                        }
+                                    }
+
+                                </code>
+                            </ol>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Put Webpack to Use</h5>
+                                <div class="article__text">
+                                    <ol>
+                                        <li>In the command line enter: <code class="command">npm run build</code></li>
+                                        <p>This will add the <code class="files">dist</code> folder with <code class="files">bundle.js</code></p>
+                                        <li>We now need to reference that new file. This bundle file is all of your code bundled into one file.</li>
+                                        <p>- Remove the <code class="files">test.js</code> and <code class="files">index.js</code> in the HTML<br>
+                                        - Add <code class="files">/dist/bundle.js</code> script reference to the HTML .</p>
+                                        <code>
+                                                &lt;!DOCTYPE html&gt;
+                                                &lt;html lang=&quot;en&quot;&gt;
+                                                &lt;head&gt;
+                                                   &lt;meta charset=&quot;UTF-8&quot;&gt;
+                                                   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                                                   &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+                                                   &lt;title&gt;Blog- Webpack&lt;/title&gt;
+                                                &lt;/head&gt;
+                                                &lt;body&gt;
+                                                   &lt;h1&gt;Webpack instructions&lt;/h1&gt;
+                                                 
+                                                   &lt;script src=&quot;./dist/bundle.js&quot;&gt;&lt;/script&gt;       
+                                                &lt;/body&gt;
+                                                &lt;/html&gt;
+
+                                        </code>
+                                        <li>We need to import and export our functions. If you are unfamiliar with Import/Export you can check out my article here.</li>
+                                        <p>- Go to <code class="files">test.js</code> and export your function<br>
+                                           - Go to <code class="files">index.js</code> and import that function </p>
+
+                                           <code>
+
+                                                // test.js
+                                                &quot;use strict&quot;
+                                                
+                                                export const sayHi = () =&gt; {
+                                                   console.log(&quot;Hi&quot;)
+                                                }
+                                                
+                                                *************************
+                                                // index.js
+                                                &quot;use strict&quot;
+                                                
+                                                import { sayHi } from './test.js';
+                                                
+                                                sayHi();
+                                                
+                                           </code>
+                                           <li>Each time you make changes to the code and want to test in the browser you need to run webpack again so it can re-bundle you files.  In the command line enter: <code class="command">npm run build</code> 
+                                                You should now see your function message in the console.</li>
+                                    </ol>
+                                    <p>Last piece I want you to try on your own. Create another function in <code class="files">test.js</code> that just console.logs a string. Make sure you export it then import it and call it in <code class="files">index.js</code>. Now head to the command line and run the build command again. This should print both of your strings in the console. If you are having any trouble my full code is on <a href="">GitHub</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Conclusion</h5>
+                                <div class="article__text">
+                                    <p>Today we did a short introduction to Webpack and why we would want to use it. We did a step by step setup of Webpack for a simple application that just prints messages to the console. We learned the three main commands that is needed for Webpack:</p>
+                                    <ol>
+                                        <li><code class="command">npm init -y</code> To initialize NPM and pulls in the default <code class="files">package.json</code></li>
+                                        <li><code class="command">npm install webpack webpack-cli --save-dev</code> To install Webpack and creates <code class="files">node_modules</code> folder and the <code class="files">package-lock.json</code> file</li>
+                                        <li><code class="command">npm run build</code> Which runs Webpack</li>
+                                    </ol>
+                                    <p>We learned how to create a <code class="files">webpack.config.js</code> with the requirements and exports that live in this file as well as what we need to add in <code class="files">package.json</code>. Lastly we learned that we needed to use import and export in our JS files. </p>
+                                    <p>I hope you found this tutorial helpful and I encourage you to continue learning more on Webpack. We really just scratched the surface on Webpack but hopefully this got you started on a working project. </p>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                                                   
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    
+    <footer class="footer">
+            <div class="container">
+                <div class="row nomargin">
+                    <div class="col col--xs-12 col--sm-6 col--md-4 nopadding">
+                        <p class="footer__text">© 2019 Lindsay Aiello All rights reserved</p>
+                    </div>
+                    <div class="col col--xs-12 col--sm-6 col--md-4 nopadding">
+                        <p class="footer__socials">
+                            Social<span class="footer__dash"></span>
+                            <a href="https://github.com/lindsayRae" target="_blank" class="footer__icon">
+                                <i class="fab fa-github fa-lg"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lindsay-aiello/" target="_blank" class="footer__icon">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>                    
+                        </p>
+                    </div>
+                    <div class="col col--xs-5 col--sm-6 col--md-1 nopadding">
+                        <div class="footer__mail">
+                            <a class="footer__mail-link" href="mailto:lbarnett712@gmail.com">lbarnett712@gmail.com</a>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </footer>
+
+
+    <!-- end of footer -->
+
+    <!-- scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-markup.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-basic.js"></script>
+	<script>Prism.plugins.autoloader.languages_path = 'https://myCDN.com/prism@v1.x/components/'</script> -->
+    
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/main.js"></script>
+    
+  
+    <!-- end of scripts -->
+</body>
+
+</html>
