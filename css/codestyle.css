@@ -3,10 +3,6 @@
 code.files {
     color: rgb(247, 44, 230);
   }
-section.wrapper {
-    background-color: #505050;
-    color: white;
-}
 
 code.error {
   color: rgb(184, 41, 41);

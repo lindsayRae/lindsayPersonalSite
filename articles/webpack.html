@@ -116,45 +116,11 @@
                                 <h5 class="article__heading">Prove Why Webpack is Cool</h5>
                                 <div class="article__text">
                                     <p>I want you to do a small walk through of how scoping and asynchronous loading works. Create an <code class="files">index.html</code> file and add your normal boilerplate. Then create a <code class="files">src</code> folder and in that add <code class="files">index.js</code> file and <code class="files">test.js</code> file. Add the reference to the js files listing <code class="files">./src/index.js</code> first in the HTML. In the <code class="files">test.js</code> create a function that prints a string in the console. My function is called sayHello and will print a message in the console when it is called. Call this function in the <code class="files">index.js</code> file </p>
-                                   <section class="wrapper">
-                                        <pre><code class="language-html"><!DOCTYPE+html></code></pre><br>
-                                        <code class="language-html">&lt;html lang="en"&gt;</code><br>
-                                        <code>
-                                                &lt;!DOCTYPE html&gt;
-                                                &lt;html lang=&quot;en&quot;&gt;
-                                                &lt;head&gt;
-                                                   &lt;meta charset=&quot;UTF-8&quot;&gt;
-                                                   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-                                                   &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-                                                   &lt;title&gt;Blog- Webpack&lt;/title&gt;
-                                                &lt;/head&gt;
-                                                &lt;body&gt;
-                                                   &lt;h1&gt;Webpack instructions&lt;/h1&gt;
-                                                
-                                                   &lt;script src=&quot;./src/index.js&quot;&gt;&lt;/script&gt;
-                                                   &lt;script src=&quot;./src/test.js&quot;&gt;&lt;/script&gt;  
-                                                       
-                                                &lt;/body&gt;
-                                                &lt;/html&gt;
-                                        </code>
-                                        <!-- <code class="language-html"> &lt;head&gt;</code><br>
-                                        <code class="language-html">&lt;meta charset="UTF-8"&gt;</code><br>
-                                        <code class="language-html"> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
-                                        <code class="language-html">&lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;</code><br>
-                                        <code class="language-html">&lt;title>Blog- Webpack&lt;/title&gt;</code><br>
-                                        <code class="language-html">&lt;/head&gt; </code><br>
-                                        <code class="language-html">&lt;body&gt; </code><br>
-                                        <code class="language-html">&lt;h1>Webpack instructions&lt;/h1&gt;</code><br>
-                                            
-                                        <code class="language-html">&lt;script src="./src/index.js"&gt; &lt;/script&gt;</code><br>
-                                        <code class="language-html">&lt;script src="./src/test.js"&gt; &lt;/script&gt; </code><br>
-                                                   
-                                        <code class="language-html">&lt;/body&gt;</code><br>
-                                        <code class="language-html">&lt;/html&gt;</code><br> -->
-                                         <!-- <iframe src="https://codepen.io/lindsayrae/embed/jjQZpQ" height="350px" width="100%"></iframe>                                                                -->
-                                                                
+                                   <section>
+                                       <img src="../img/webpack/webpack2.png">                                     
                                       
                                    </section>
+
                                    <p>What you should see in the console is an error like this:  <code class="error">Uncaught ReferenceError: sayHello is not defined </code>This is to be expected because the order your list your script file matters. <code class="files">index.js</code> is a dependency of <code class="files">test.js</code>. You can’t call the function in the first file before it is declared it in the second file. Go ahead and switch the script tags in the HTML so <code class="files">test.js</code> is referenced first. Reload the browser and your code should work now. Imagine your application has over 20 script files (which would be very common) it can be very challenging to keep it all straight, especially when you have dependencies in your logic. We are not going to spend much more time on this concept but the point being is that with a bundler like Webpack, you don't have to worry about this. Read on to see a step by step instructions on setting up Webpack. </p>
                                 </div>
                             </div>
@@ -254,7 +220,8 @@
                                                 &lt;/html&gt;
 
                                         </code>
-                                        <li>We need to import and export our functions. If you are unfamiliar with Import/Export you can check out my article here.</li>
+                                        
+                                      <li>We need to import and export our functions. If you are unfamiliar with Import/Export you can check out my article here.</li>
                                         <p>- Go to <code class="files">test.js</code> and export your function<br>
                                            - Go to <code class="files">index.js</code> and import that function </p>
 
@@ -340,14 +307,11 @@
     <!-- end of footer -->
 
     <!-- scripts -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-markup.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-basic.js"></script>
-	<script>Prism.plugins.autoloader.languages_path = 'https://myCDN.com/prism@v1.x/components/'</script> -->
-    
-    <script src="libs/jquery/jquery.min.js"></script>
-    <script src="libs/slick/slick.min.js"></script>
-    <script src="js/options.js"></script>
-    <script src="js/main.js"></script>
+  
+    <script src="../libs/jquery/jquery.min.js"></script> 
+    <script src="../libs/slick/slick.min.js"></script>
+    <script src="../js/options.js"></script>
+    <script src="../js/main.js"></script>
     
   
     <!-- end of scripts -->
