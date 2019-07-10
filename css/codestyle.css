@@ -9,12 +9,14 @@ code.error {
 }
 
 code.command {
-  color: rgb(93, 201, 5)
+  color: rgb(93, 201, 5);
 }
 code.object {
-  color: rgb(5, 106, 201)
+  color: rgb(5, 106, 201);
 }
-
+.syntax {
+  color:  rgb(93, 201, 5);
+}
 li {  
   font-size: 16px; 
   line-height: 32px;

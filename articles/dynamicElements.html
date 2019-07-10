@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <title>Building Dynamic ELements with JS</title>
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/codestyle.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
     <link rel="stylesheet" href="../css/custom.css">
@@ -91,114 +92,174 @@
                 <div class="col">
                     <div class="article__content">
                         <div class="row">
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                            <!-- <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <div class="article__text article__text--large">
                                     <p>What does it take to be successful? Ask around and you will find different answers to the formula of success. The truth is, success leaves clues and you can achieve the success in the area you desire by observing the
                                         common qualities and principles.</p>
                                 </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
+                            </div> -->
+                            <!-- <div class="col col--lg-10 col--lg-offset-1">
                                 <div class="article__image">
                                     <figure>
                                         <img src="http://placehold.it/1920x1120" alt="">
                                     </figure>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">How to stop living your life on autopilot</h5>
+                                <h5 class="article__heading">Intro</h5>
                                 <div class="article__text">
-                                    <p>A smile can last a lifetime-if you take care of it. For that reason, it’s important for parents to instill good oral health habits in children as early as possible.</p>
-                                    <p>According to U.S. Surgeon General Richard H. Carmona’s “National Call to Action to Promote Oral Health” report, children lose more than 51 million school hours and adults lose more than 164 million work hours each year
-                                        due to dental disease or dental visits. The nation’s total bill for dental services was estimated to be more than $70.1 billion in 2002.</p>
+                                    <p>Today we are going to talk about building dynamic elements in Vanilla JavaScript! I am actually pretty excited about this topic because it is something that is extremely useful, yet I don't feel like there are many resources on the web on how to do this. We want our web application to be dynamic so and we want to understand how to do this with JavaScript before jumping into a frontend framework like React, Angular Vue.js or using (no longer needed) jQuery. We are going to take 3 very practical elements that I build all the time in my current Dev role and walk through the whole process. We will create a button for quick demo purposes then create an ordered list, a select dropdown and a table.</p>
+                                    <p>This article might get a little lengthy but it is mostly code examples. With each element that we are building we will first build it with a hard coded array of json and then we will build the exact same thing but with a fetch method pulling data from mockAPI. If you are unfamiliar with the fetch method you might want to read my article on Fetch Method with MockAPI first.</p>
                                 </div>
                             </div>
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">What to look for in the first place?</h5>
+                                <h5 class="article__heading">Syntax</h5>
                                 <div class="article__text">
-                                    <p>Every new computer that’s brought home from the store has an operating system installed onto it. But what most new computer users don’t realize, is that without an operating system, that computer would be a simple shell
-                                        of possibilities. A powered computer lacking an operating system wouldn’t display anything more than a bunch of confusing text messages that describe the computer’s boot process. At the very end of this process,
-                                        the computer looks for an operating system and if not found, it will prompt the user to tell it where it is.</p>
+                                    <p>Let’s get started with the basic syntax for creating elements and then adding them to the DOM in a specific place.  To create an element you will use the following method: <code class="syntax">document.createElement()</code>. You can create any valid HTML elements like buttons, lists, selects, tables etc. Let’s talk about creating a button first. The element that you are creating is what is being passed into the method. You also want to store that newly created element in a variable so you can continue to use it. For example: 
+                                        <code class="syntax">const myButton = document.createElement(“button”)</code>  
+                                        Now that your new button is in a variable ‘myButton’ you can chain more methods on it like adding a class or setting an attribute. We will go over that more in the remaining examples in this article.
+                                        </p>
+                                        <p>So you have this button, but where are you going to put it? To add this new button to the DOM you need to append it to something with the following method: <code class="syntax">element.appendChild()</code>. In the English dictionary the definition of append is: <i>verb
+                                            add (something) as an attachment or supplement.</i> Let’s say you have a div with the ID of <code>‘myDiv’</code> and you want to nest your button to the div. The syntax would look like this: 
+                                            
+                                            <code class="syntax">const parentDiv = document.getElementById(“myDiv”)</code>
+                                            <code class="syntax">parentDiv.appendChild(‘myButton’)</code>
+                                            </p>
+                                            <img>
+                                            <img>
+                                            <p>We are going to take this same principal and apply throughout our examples of building dynamic lists, selects and tables. Are you excited? Thought so.. Get your text editor ready with the following files:  index.html, style.css, list.js, select.js file and table.js. Be sure to link those files appropriately to your index.html file and then we are ready to go.</p>
                                 </div>
                             </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__slider slider" id="articleSlider">
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-1"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-2"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-3"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-4"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-5"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">Become a travel pro in one easy lesson</h5>
+                                <h5 class="article__heading">Dynamic List</h5>
                                 <div class="article__text">
-                                    <p>An even better vacation idea might be to do a tour of each of the Great Lakes. This way you can see the best things that each lake has to offer and you can even enjoy a few of the country’s finest states along the way.
-                                    If you are looking to do a Great Lakes tour, then talk with a travel agent about tours that may already exist. Each summer there are a variety of companies that offer a ten day tour up to a one month tour of all or part
-                                    of the Great Lakes. So see what best fits your schedule and your budget and then dive in. You will often find more reasonable deals when you plan you Great Lakes tour through an already established company.</p>
+                                    <p>If you read my last article on eventlisteners I had a “bonus’ code building a list with dynamic data. We are going to pick up there and I’ll go through a little more detail on how this list was created. Creating elements and appending them in JS can get confusing so it is best to plan it all out first. If you were to create an Ordered List in HTML it would look something like this: </p>
+                                    <img src="../img/dynamicElements/elements1.png">
+                                    <p>This is perfectly fine to do in the right situation but what if you don’t know how many items will be in your list? This is why we create dynamic elements in JS.</p>
+                                    <p>We are going to remove the <code class="syntax">&lt;ol&gt;</code> and <code class="syntax">&lt;li&gt;</code> from the HTML but add an id to the <code class="syntax">&lt;div&gt;</code> so when we create the <code class="syntax">&lt;ol&gt;</code> in JS we know where to put it. Before diving into the JS code, let’s talk about what we are going to do:
+                                        <ol>
+                                            <li>We are going to create an array of items that we want to show in the HTML as a list. You can add as many items as you would like. I am going to create an array called ‘fruits’ and add an apple, banana and peach to the fruits array.</li>
+                                            <li>We need to get our div element by its ID and store it in a variable </li>
+                                            <li>Create an <code class="syntax">&lt;ol&gt;</code> element and store in a variable</li>
+                                            <li>Now we will need to loop through our array and for each fruit in the fruits array we want to:
+                                                <ul>
+                                                    <li>Create a <code class="syntax">&lt;li&gt;</code> and store in a variable</li>
+                                                    <li>Set the innerText of the <code class="syntax">&lt;li&gt;</code> to the fruit</li>
+                                                    <li>Append the <code class="syntax">&lt;li&gt;</code> to the <code class="syntax">&lt;ol&gt;</code></li>
+                                                </ul>
+                                            </li>
+                                            <li>After the loop finishes we need to append the <code class="syntax">&lt;ol&gt;</code> to the <code class="syntax">&lt;div&gt;</code> </li>
+                                        </ol>
+                                    </p>
+                                        <img>
+                                        <p>At this point you should be familiar with nested elements. When you are building elements in JS you start from the outside or parent element and go down into the child element and then after the innermost child is complete (in this case the li) you need to then append from the inside and then move out back to the parent</p>
+                                        <p>Here is my final JS for this list:</p>
+                                        <img src="../img/dynamicElements/elements2.png">
+                                        <p>Great job! Except one problem, our data (fruits) is still hard coded. Then next example will show the array of fruits and we are still going to build out list but this time we will get the data from mockAPI which is our dummy server.</p>
+                                        <p>** Note I added a Button in the HTML so we had something to click to fetch our fruit data</p>
+                                        <img src="../img/dynamicElements/elements3.png">
+                                        <p>I hope this example felt familiar. The major difference here is how the data is structured. I structured the data to be an array of objects. In my job, this is how data is always returned.  I took that json data and stored it in our fruits variable we were using in the prior example.  This is why you need to use dot notation. In our <code>forEach</code> loop I can’t just get fruit in fruits, I want the <code class="syntax">fruit.name</code> in <code class="syntax">fruits</code>. Below is an example of the array of json data coming back from mockAPI.</p>
+                                        <img src="../img/dynamicElements/elements4.png">
                                 </div>
                             </div>
+                           
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__quote">
-                                    <blockquote>
-                                        Grab a friend or a few friends and make it a summer adventure that you will never forget.
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Dynamic Selects</h5>
                                 <div class="article__text">
-                                    <p>Two weeks later, all these children were again allowed to engage in the drawing activity. The result was interesting. It was found that the children who chose to draw for the reward showed less interest in drawing, and
-                                    also when the reward was withdrawn, these children simply stopped drawing. Children in the other two conditions showed no significant change in their interest in drawing. The result seems to suggest that the external
-                                    reward of a “Good Player” certificate destroyed the original intrinsic motivation for drawing.</p>
+                                    <p>Next we are going to build a select which creates a drop down list with options a user can select. First let’s take a look at it in HTML.</p>
+                                    <img src="../img/dynamicElements/elements5.png">
+                                    <p>I added the <code class="syntax">&lt;select&gt;</code> tag nested in a <code class="syntax">&lt;div&gt;</code> and then <code class="syntax">&lt;option&gt;</code> tags nested in the select. The <code class="syntax">&lt;option&gt;</code> is the available options the user has to click on. Also you will notice the value of each option. This is what is sent to the server if that option is selected. </p>
+                                    <p>Now lets take out the <code class="syntax">&lt;select&gt;</code> and <code class="syntax">&lt;option&gt;</code> tags from the HTML so we can build in JS! We will go through the exact same steps as the list above but sub out our select and option tags:
+                                        <ol>
+                                            <li>Keep it simple with our original array of fruits with an apple, banana and peach.</li>
+                                            <li>We need to get our <code class="syntax">&lt;div&gt;</code> element by its ID and store it in a variable </li>
+                                            <li>Create a <code class="syntax">&lt;select&gt;</code> and store in a variable</li>
+                                            <li>Now we will need to loop through our array and for each fruit in the fruits array we want to:
+                                                <ul>
+                                                    <li>Create a <code class="syntax">&lt;option&gt;</code> and store in a variable</li>
+                                                    <li>Set the innerText of the <code class="syntax">&lt;option&gt;</code> to the fruit</li>
+                                                    <li>Append the <code class="syntax">&lt;option&gt;</code> to the <code class="syntax">&lt;select&gt;</code></li>
+                                                </ul>
+                                            </li>
+                                            <li> After the loop finishes we need to append the <code class="syntax">&lt;select&gt;</code> to the <code class="syntax">&lt;div&gt;</code></li>
+                                        </ol>
+                                    </p>
+                                    <img src="../img/dynamicElements/elements6.png">
+                                    <p>Let’s transition our example to the next step of pulling in data from MockAPI using the fetch request and again adding a button to fire off the fetch and build the select dropdown.  For this example we are going to set the innerText of the option but we will also set the value. The array of json will return a value field so we want to set this with <code class="syntax">option.value = fruit.value</code>. You will notice that first fruit you see in your option is the first one that came back from the fetch request.  With options you can set an attribute of selected to any of fruits with a simple <code>if</code> statement to compare the option value. You will see this under <code>// Bonus logic!</code> In my code below. </p>
+                                    <img src="../img/dynamicElements/elements7.png">
                                 </div>
                             </div>
+
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Dynamic Tables</h5>
+                                <div class="article__text">
+                                    <p>Hopefully at this point you are getting the hang of dynamically creating elements and appending them to the parent element. We are now going to build a dynamic table which has more elements so can be slightly tricky but I am going to break it all down like the previous examples so let’s get started.</p>
+                                    <p>First take a look at a table on HTML. There are more nested elements that make up a table so mapping this out ahead of time is even more important. I did add some simple css to this table which you can grab from my GutHub but it is not necessary.</p>
+                                    <img src="../img/dynamicElements/elements8.png">
+                                    <p>Now lets walk through step by step what we need to  create, looking at the HTML too keep us on track. 
+                                        <ol>
+                                            <li>Create a <code class="syntax">&lt;div&gt;</code> in your HTML</li>
+                                            <li>Create a <code class="syntax">&lt;button&gt;</code> in the HTML with an ID to display your table</li>
+                                            <li>Head over to your JS file and get that <code class="syntax">&lt;div&gt;</code> by the ID and store in a variable</li>
+                                            <li>Create a <code class="syntax">&lt;table&gt;</code> element and store in a variable</li>
+                                            <li>Create a <code class="syntax">&lt;thead&gt;</code> element and store in a variable</li>
+                                            <li>Create <code class="syntax">&lt;tr&gt;</code> element that will be nested in the <code class="syntax">&lt;thead&gt;</code> and store in a variable</li>
+                                            <li>Create <code class="syntax">&lt;th&gt;</code> element that will be for your table heading names and store in a variable
+                                                <ul>
+                                                    <li>You will need one for each table heading. In my example I will be creating 4</li>
+                                                </ul>
+                                            </li>
+                                            <li>Create <code class="syntax">&lt;tbody&gt;</code> element that will be used later in the forEach loop </li>
+                                            <li>Set the innerText of each of the 4 <code class="syntax">&lt;th&gt;</code> that you created in #6
+                                                <ul>
+                                                    <li>This is what the user will see. My example is; “Name”, “Value”, “Color” and “Qty”</li>
+                                                </ul>
+                                            </li>
+                                            <li>Append each of the <code class="syntax">&lt;th&gt;</code> variables to the <code class="syntax">&lt;tr&gt;</code></li>
+                                            <li>Append the <code class="syntax">&lt;tr&gt;</code> to the <code class="syntax">&lt;thead&gt;</code></li>
+                                            <li>Now we will need to loop through our array and for each fruit in the fruits array we want to:
+                                                <ul>
+                                                    <li>Create <code class="syntax">&lt;tr&gt;</code> element that will be nested in the <code class="syntax">&lt;tbody&gt;</code> and store in a variable</li>
+                                                    <li>Create <code class="syntax">&lt;td&gt;</code> element that will be nested in the <code class="syntax">&lt;tr&gt;</code> and store in a variable</li>
+                                                    <li>Set the innerText of each of your <code class="syntax">&lt;td&gt;</code> that you just created using dot notation</li>
+                                                    <li>Append each of the <code class="syntax">&lt;td&gt;</code> variables to the <code class="syntax">&lt;tr&gt;</code></li>
+                                                    <li>Append the <code class="syntax">&lt;tr&gt;</code> variable to the <code class="syntax">&lt;tbody&gt;</code></li>
+                                                    <li> Close the forEach loop</li>
+                                                </ul>
+                                            </li>
+                                            <li>Now that you have created all the elements of the table you need to append the following:
+                                                <ul>
+                                                    <li><code class="syntax">&lt;table&gt;</code>to the <code class="syntax">&lt;div&gt;</code></li>
+                                                    <li><code class="syntax">&lt;thead&gt;</code> to the <code class="syntax">&lt;table&gt;</code></li>
+                                                    <li><code class="syntax">&lt;tbody&gt;</code> to the <code class="syntax">&lt;table&gt;</code></li>
+                                                </ul>
+                                            </li>
+                                            <li>Add an event listener to your button to call this function that build the table</li>
+                                            <li>That’s it!!! </li>
+                                        </ol>
+                                    </p>
+                                    <img src="../img/dynamicElements/elements9.png">
+                                    <p>At first glance building something like a table in JS can look overwhelming but if you take the time to map it out it really isn’t too bad. The last thing I want to show you on this table is using the fetch method again with mockAPI. Below is essentially the same code with the added fetch request:</p>
+                                    <img src="../img/dynamicElements/elements10.png">    
+                                </div>
+                            </div>
+
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Conclusion</h5>
+                                <div class="article__text">
+                                    <p>Today we talked about building dynamic elements with JavaScript. We talked about the main syntax needed which is <code class="syntax">document.createElement()</code> and <code class="syntax">element.appendChild()</code>. Our data came from hard coded arrays or arrays of JSON but we also incorporated the fetch request to get our data from mockAPI. We started small and built an ordered list, then a select and finished up with building the dynamic table. Please take these examples and break them, fix them and add to them. Try adding a class or an attributes in the forEach loop. I really hope found this article helpful and would love to hear any feedback! </p>
+                                </div>
+                            </div>    
                         </div>
                     </div>
-                    <div class="article__shares">
-                        <div class="row">
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--twitter"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--facebook"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
 
                                 
                             </div>
                         </div>
-                    </div> -->
+                    </div> 
                 </div>
             </div>
         </div>

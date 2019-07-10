@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../../css/codestyle.css">
+    <link rel="stylesheet" href="../css/codestyle.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
     <link rel="stylesheet" href="../css/custom.css">
@@ -117,7 +117,7 @@
                                 <div class="article__text">
                                     <p>I want you to do a small walk through of how scoping and asynchronous loading works. Create an <code class="files">index.html</code> file and add your normal boilerplate. Then create a <code class="files">src</code> folder and in that add <code class="files">index.js</code> file and <code class="files">test.js</code> file. Add the reference to the js files listing <code class="files">./src/index.js</code> first in the HTML. In the <code class="files">test.js</code> create a function that prints a string in the console. My function is called sayHello and will print a message in the console when it is called. Call this function in the <code class="files">index.js</code> file </p>
                                    <section>
-                                       <img src="../img/webpack/webpack2.png">                                     
+                                       <img src="../img/webpack/webpack1.png">                                     
                                       
                                    </section>
 
@@ -141,54 +141,17 @@
                                             </p>                                        
                                         
                                         <p>** Note: I am using a plugin from VSCode called ‘Simple Icons’ for my icons</p>
-                                        <img>
+                                       
                                             <li>Create a <code class="files">webpack.config.js</code> file in the root directory of project (meaning same level as your index.html). This is where we will specify our configurations. We need to require ‘path’ which is module core element from <code class="files">Node.js</code>. You can read more about path <a href="https://nodejs.org/api/modules.html" target="_blank">here</a> with their docs if you would like.  Create a <code class="object">module.exports</code> object. In this object we need to create an <code class="object">entry</code> point, an <code class="object">output</code> and a <code class="object">mode</code></li>    
-
-                                    
-                                    <code>
-                                            // webpack.config.js 
-
-                                            const path = require('path');      // import path from Node.js
-                                            module.exports = {
-                                               entry: './src/index.js',        // default entry point  
-                                               output: {                       // where everything else goes
-                                                   filename: 'bundle.js',
-                                                   path: path.resolve(__dirname, './dist')   
-                                                        // absolute path (__ currentDirectory, relativePathToDistFolder )
-                                               },                                // webpack will auto create this
-                                               mode: 'none' // non is default, can add ‘production’ or ‘development’ 
-                                            }                                        
-
-                                    </code>
-
-                                    <li>Go to <code class="files">package.json</code> file and specify a script: “build”: “webpack”. Don’t forget to add the comma after the “test” value. </li>
+                                            <section>
+                                                <img src="../img/webpack/webpack2.png">                                                                                   
+                                            </section>                              
+                                            <li>Go to <code class="files">package.json</code> file and specify a script: “build”: “webpack”. Don’t forget to add the comma after the “test” value. </li>
                                 
-                                <code>
-                                    
-                                    //package.json
-
-                                    {
-                                        "name": "Webpack",
-                                        "version": "1.0.0",
-                                        "description": "",
-                                        "main": "index.js",
-                                        "scripts": {
-                                        "test": "echo \"Error: no test specified\" && exit 1", // this test was auto-generated and doesn't do anything
-
-                                        "build": "webpack"  // everytime we run this script it will run webpack
-                                        
-                                        },
-                                        "keywords": [],
-                                        "author": "",
-                                        "license": "ISC",
-                                        "devDependencies": {
-                                        "webpack": "^4.35.0",
-                                        "webpack-cli": "^3.3.5"
-                                        }
-                                    }
-
-                                </code>
-                            </ol>
+                                            <section>
+                                                <img src="../img/webpack/webpack3.png">                                                                                 
+                                            </section>                                   
+                                        </ol>
                                     </div>
                                 </div>
                                
@@ -203,46 +166,17 @@
                                         <li>We now need to reference that new file. This bundle file is all of your code bundled into one file.</li>
                                         <p>- Remove the <code class="files">test.js</code> and <code class="files">index.js</code> in the HTML<br>
                                         - Add <code class="files">/dist/bundle.js</code> script reference to the HTML .</p>
-                                        <code>
-                                                &lt;!DOCTYPE html&gt;
-                                                &lt;html lang=&quot;en&quot;&gt;
-                                                &lt;head&gt;
-                                                   &lt;meta charset=&quot;UTF-8&quot;&gt;
-                                                   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-                                                   &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-                                                   &lt;title&gt;Blog- Webpack&lt;/title&gt;
-                                                &lt;/head&gt;
-                                                &lt;body&gt;
-                                                   &lt;h1&gt;Webpack instructions&lt;/h1&gt;
-                                                 
-                                                   &lt;script src=&quot;./dist/bundle.js&quot;&gt;&lt;/script&gt;       
-                                                &lt;/body&gt;
-                                                &lt;/html&gt;
-
-                                        </code>
+                                        <section>
+                                            <img src="../img/webpack/webpack4.png">                                                                                 
+                                        </section> 
                                         
                                       <li>We need to import and export our functions. If you are unfamiliar with Import/Export you can check out my article here.</li>
                                         <p>- Go to <code class="files">test.js</code> and export your function<br>
                                            - Go to <code class="files">index.js</code> and import that function </p>
 
-                                           <code>
-
-                                                // test.js
-                                                &quot;use strict&quot;
-                                                
-                                                export const sayHi = () =&gt; {
-                                                   console.log(&quot;Hi&quot;)
-                                                }
-                                                
-                                                *************************
-                                                // index.js
-                                                &quot;use strict&quot;
-                                                
-                                                import { sayHi } from './test.js';
-                                                
-                                                sayHi();
-                                                
-                                           </code>
+                                        <section>
+                                            <img src="../img/webpack/webpack5.png">                                                                                 
+                                        </section> 
                                            <li>Each time you make changes to the code and want to test in the browser you need to run webpack again so it can re-bundle you files.  In the command line enter: <code class="command">npm run build</code> 
                                                 You should now see your function message in the console.</li>
                                     </ol>
