@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <title>JS Event Listeners</title>
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/codestyle.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
     <link rel="stylesheet" href="../css/custom.css">
@@ -91,118 +92,63 @@
                 <div class="col">
                     <div class="article__content">
                         <div class="row">
+                            
+                            
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__text article__text--large">
-                                    <p>What does it take to be successful? Ask around and you will find different answers to the formula of success. The truth is, success leaves clues and you can achieve the success in the area you desire by observing the
-                                        common qualities and principles.</p>
-                                </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__image">
-                                    <figure>
-                                        <img src="http://placehold.it/1920x1120" alt="">
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">How to stop living your life on autopilot</h5>
+                                <h5 class="article__heading">Intro</h5>
                                 <div class="article__text">
-                                    <p>A smile can last a lifetime-if you take care of it. For that reason, it’s important for parents to instill good oral health habits in children as early as possible.</p>
-                                    <p>According to U.S. Surgeon General Richard H. Carmona’s “National Call to Action to Promote Oral Health” report, children lose more than 51 million school hours and adults lose more than 164 million work hours each year
-                                        due to dental disease or dental visits. The nation’s total bill for dental services was estimated to be more than $70.1 billion in 2002.</p>
+                                    <p>When JavaScript was first introduced to me it was explained as any movement or action that is taking place on the screen (yes I know you can do movements/animations with CSS but stick with me). Think about a simple button that shows an alert saying hello when you click it. This is being done with event Emitters and Listeners in JS! You will be using this everywhere in your code so today we are going to talk about what an Event Emitters and Listeners are, how to use them, we will understand a little more on event bubble up effect and then we will look at event.target</p>
+                                    
                                 </div>
                             </div>
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">What to look for in the first place?</h5>
+                                <h5 class="article__heading">Definitions</h5>
+                                <h6 class="article__heading">Event Emitters</h6>
                                 <div class="article__text">
-                                    <p>Every new computer that’s brought home from the store has an operating system installed onto it. But what most new computer users don’t realize, is that without an operating system, that computer would be a simple shell
-                                        of possibilities. A powered computer lacking an operating system wouldn’t display anything more than a bunch of confusing text messages that describe the computer’s boot process. At the very end of this process,
-                                        the computer looks for an operating system and if not found, it will prompt the user to tell it where it is.</p>
+                                    <p>First let’s talk about an event real quick. An event is something that the browser does or a user does. For example, when a browser finishes loading, that is a browser event. When the user clicks a button or adds text in an input, that’s a user event. An event Emitter is an event that is triggered in the application. Try not to over complicate the idea of emitters. The english language definition of emit is : verb - produce and discharge (something, especially gas or radiation). An event is emitted (produced), then you can program a series of actions that will happen after the event is emitted. For example:  when that user clicks a button, basically the JS engine is saying ‘Hey over here!! A button was clicked (emitted).. Look at me!’. Then it is up to us as the JS programmers to listen to that event and program what happens next.</p>
                                 </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__slider slider" id="articleSlider">
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-1"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-2"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-3"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-4"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-5"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">Become a travel pro in one easy lesson</h5>
+                                <h6 class="article__heading">Event Listeners</h6>
                                 <div class="article__text">
-                                    <p>An even better vacation idea might be to do a tour of each of the Great Lakes. This way you can see the best things that each lake has to offer and you can even enjoy a few of the country’s finest states along the way.
-                                    If you are looking to do a Great Lakes tour, then talk with a travel agent about tours that may already exist. Each summer there are a variety of companies that offer a ten day tour up to a one month tour of all or part
-                                    of the Great Lakes. So see what best fits your schedule and your budget and then dive in. You will often find more reasonable deals when you plan you Great Lakes tour through an already established company.</p>
+                                    <p>Event listeners will take place all over your code.  Event Listeners literally just hang around listening for an event to happen. So from the button click above, the click event is emitted saying: “‘Hey over here!! A button was clicked.. Look at me!’” and the event listener is waiting around listening for that event then says: ‘Okay button I hear you, now I am going to do whatever the programmer told me to do. Thanks!’ The event listener can be programed to listen to any general event or a specific event based off the class, name or ID. In pseudo code it sounds like this: Hey document, get the element with the ID of “myButton” and add an event listener of “click” to it. Then when that specific button is clicked I want you to alert the user “Hello World”.  Here is the syntax for that program: <code class="syntax">document.getElementByID(“myButton”).addEventListener(“click”, sayHello(){
+                                        alert(‘Hello World’)})</code>.</p>
+                                    <p>You might see examples online with the event handlers in the HTML like: <code class="syntax">&lt;button onclick="alert(‘Hello World’)"&gt;Click Me&lt;/button&gt;</code> . This is called an on-event handler, and it is probably coming from an older example/article. This is no longer considered best practice because each object can only have one of these types of events. Also it can become inefficient and unmanageable pretty quickly. We want to keep these event handlers and listeners in our separate JavaScript files. </p>
+                                    <p>Below are a couple common event listeners. Go ahead and try them out in your editor by adding a console.log() or an alert().</p>
+                                    <img src="../img/eventListeners/eventListeners1.png">
                                 </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__quote">
-                                    <blockquote>
-                                        Grab a friend or a few friends and make it a summer adventure that you will never forget.
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h6 class="article__heading">Bubbling</h6>
                                 <div class="article__text">
-                                    <p>Two weeks later, all these children were again allowed to engage in the drawing activity. The result was interesting. It was found that the children who chose to draw for the reward showed less interest in drawing, and
-                                    also when the reward was withdrawn, these children simply stopped drawing. Children in the other two conditions showed no significant change in their interest in drawing. The result seems to suggest that the external
-                                    reward of a “Good Player” certificate destroyed the original intrinsic motivation for drawing.</p>
+                                    <p>Event bubbling is simple if you have a basic understanding of HTML elements. When a generic event is triggered it bubbles up through all of its parents elements until it reaches the document object. Take a look at my <a href="https://codepen.io/lindsayrae/pen/VJvJaE" target="_blank">CodePen</a>, read through the code and click the button to see what happens. Then click the green div and then just click the outer black div.  What you should have noticed is that when you click the button, the alert is triggered on the button, then the green div, then the black div. The event bubbles up through all three elements. If you only click the black div, you will only see the alert from the balck div since that is the top of the document object.</p>
                                 </div>
+                                <h6 class="article__heading">Target Event Property</h6>
+                                <div class="article__text">
+                                    <p>The target event property can be a very powerful tool. It will return the element that triggered the event instead of the event listener that triggered the event. Let go back to the codepen to see the difference. Click <a href="https://codepen.io/lindsayrae/pen/KjVqrm" target="_blank">here</a>. In Example #1 we are clicking on a paragraph with the ID of paragraphOne, and then sending an alert with a message. This should be familiar from previous examples. Now go to Example #2 and notice that in my function I am passing an event and want my alert to tell me the nodeName on the target of the event that I clicked. So in this case I get my message plus : ‘P’ which is the nodeName. </p>
+                                    <p>As you get into more complex applications you will be working with dynamic content where you won’t always know the ID name. Or you might want to grab something by a class name. In Example # 3 I want to target the elements with the class name ‘purple’.  Unlike IDs, elements can have multiple class names and multiple elements with the same class name.  What my code is saying is it wants to listen to a click event on anything on the document that contains the class ‘purple’.</p>
+                                </div>
+                                <h6 class="article__heading">Bonus</h6>
+                                <div class="article__text">
+                                    <p>Speaking of dynamic content, there will be many cases where you will be building a list, creating a select dropdown or a table in JavaScript with data that is being returned to you from a server. I noticed that there are not many articles out there that can help you build these elements with vanilla JavaScript and using the fetch request.  In my next article we are going to do just that. The bonus code on the codepen is a sneak peek at building a list from an array. In this case the array is hard coded, however we are creating the ‘ul’ element then in a forEach loop creating the nested ‘li’ for each item in the array. Within that forEach loop we can add event listeners, add attributes etc. Take a peek at it but I don’t expect you to fully understand what is going on until you go through that article. </p>
+                                </div>                                
                             </div>
-                        </div>
-                    </div>
-                    <div class="article__shares">
-                        <div class="row">
+                            
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--twitter"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--facebook"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <h5 class="article__heading">Conclusion</h5>
+                                <div class="article__text">
+                                    <p>Today we walked through the event process and talked about what an event emitter is, how to listen for events, event bubbling and targeting specific events. In this article I didn’t have code for you to download in gitHub but instead I just linked to examples in codepen which I thought might demonstrate the topic a little better. Please play around in code ped and break it, create new elements etc to help you fully understand how the code works. You also got a sneak peek at my next article on Creating Dynamic Lists, Selects and Tables. 
 
-
-                                
-                            </div>
+                                        Happy coding!
+                                        
+                                        -Lindsay
+                                        </p>                                   
+                                </div>
+                            </div>                        
+                           
                         </div>
-                    </div> -->
+                    </div>                              
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
+       
     <!-- footer -->
     
     <footer class="footer">
@@ -236,10 +182,10 @@
 
     <!-- scripts -->
     
-    <script src="libs/jquery/jquery.min.js"></script>
-    <script src="libs/slick/slick.min.js"></script>
-    <script src="js/options.js"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="../libs/jquery/jquery.min.js"></script> -->
+    <!-- <script src="../libs/slick/slick.min.js"></script>
+    <script src="../js/options.js"></script>
+    <script src="../js/main.js"></script> -->
     
     <!-- end of scripts -->
 </body>

@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <title>ES6 Import and Export</title>
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/codestyle.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
     <link rel="stylesheet" href="../css/custom.css">
@@ -92,113 +93,110 @@
                     <div class="article__content">
                         <div class="row">
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__text article__text--large">
-                                    <p>What does it take to be successful? Ask around and you will find different answers to the formula of success. The truth is, success leaves clues and you can achieve the success in the area you desire by observing the
-                                        common qualities and principles.</p>
-                                </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__image">
-                                    <figure>
-                                        <img src="http://placehold.it/1920x1120" alt="">
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">How to stop living your life on autopilot</h5>
+                                <h5 class="article__heading">Introduction</h5>
                                 <div class="article__text">
-                                    <p>A smile can last a lifetime-if you take care of it. For that reason, it’s important for parents to instill good oral health habits in children as early as possible.</p>
-                                    <p>According to U.S. Surgeon General Richard H. Carmona’s “National Call to Action to Promote Oral Health” report, children lose more than 51 million school hours and adults lose more than 164 million work hours each year
-                                        due to dental disease or dental visits. The nation’s total bill for dental services was estimated to be more than $70.1 billion in 2002.</p>
+                                    <p>Today we are going to talk about JavaScript modules. This is a newer feature with ES6 and modules allow us the use of Import and Export in our JS files. If you want to keep you code base organized then read on because this is actually a pretty easy concept to get started with. I am going to go over why we would use modules with import and export, where we would use it. We will also review some sample code so you can understand the syntax and get started on your own project.</p>
                                 </div>
                             </div>
+                            
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">What to look for in the first place?</h5>
+                                <h5 class="article__heading">Why Modules?</h5>
                                 <div class="article__text">
-                                    <p>Every new computer that’s brought home from the store has an operating system installed onto it. But what most new computer users don’t realize, is that without an operating system, that computer would be a simple shell
-                                        of possibilities. A powered computer lacking an operating system wouldn’t display anything more than a bunch of confusing text messages that describe the computer’s boot process. At the very end of this process,
-                                        the computer looks for an operating system and if not found, it will prompt the user to tell it where it is.</p>
-                                </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__slider slider" id="articleSlider">
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-1"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-2"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-3"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-4"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-5"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
+                                    <p>Think about any textbook you have read. Is all of the context in one big chapter or is it divided up into many chapters? I am assuming you answered that the textbook was divided up into chapters; we can think of code modules in a similar way. It is a way to organize your code and allows you to share data between scopes. Think of the term modules more as a concept and the specific syntax is when we would use the keywords <code class="syntax">import</code> and <code class="syntax">export</code>. At this point you are probably familiar with scope in JavaScript but if you need a quick refresher check out the MDN <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope" target="_blank">docs</a>. As your application grows, it can be harder to maintain when everything is in one giant file. Modularizing your code base is a clean way to group together related logic and can also be helpful when debugging. If you read my earlier article on JS Classes where I built a small game with a Monster Class, Hero Class and then the interacting logic, you might have noticed that the very small application grew pretty quickly. You can read that article <a href="" target="_blank">here</a> to take a quick glance at the code or just continue on with this article. I want to take that earlier example and break it up into 3 separate files: <code class="files">Monster.js</code>, <code classs="files">Hero.js</code>, and <code class="files">main.js</code>. This is where Import and Export will come into play. Its allows me to write my code in separate files but share what I need with other files.</p>
                                 </div>
                             </div>
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">Become a travel pro in one easy lesson</h5>
+                                <h5 class="article__heading">Getting Started</h5>
                                 <div class="article__text">
-                                    <p>An even better vacation idea might be to do a tour of each of the Great Lakes. This way you can see the best things that each lake has to offer and you can even enjoy a few of the country’s finest states along the way.
-                                    If you are looking to do a Great Lakes tour, then talk with a travel agent about tours that may already exist. Each summer there are a variety of companies that offer a ten day tour up to a one month tour of all or part
-                                    of the Great Lakes. So see what best fits your schedule and your budget and then dive in. You will often find more reasonable deals when you plan you Great Lakes tour through an already established company.</p>
+                                    <p>This is the “easy” part. We will dive a little deeper into the syntax and many of the options a little later but your main setup is as follows:  
+                                        <ol>
+                                            <li>Set up an <code class="files">index.html</code> file with your normal boilerplate</li>
+                                            <li>Create a <code class="files">main.js</code> file and include in your HTML before your closing body tag</li>
+                                            <li>Create a <code class="files">Monster.js</code> file</li>
+                                            <li>Create a <code class="files">Hero.js</code> file </li>
+                                            <li>Notice I did not mention to add those last two js file in the <code class="files">index.html</code></li>
+                                            <li>Inside <code class="files">main.js</code> script tag add <code class="syntax">type=”module”</code>
+                                                <ul>
+                                                    <li><code class="syntax">type=”module”</code> is all you need for the browser to treat the external script (or inline script) as a ES6 module</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </p>
+                                    <img src="../img/importExport/importExport1.png">
                                 </div>
-                            </div>
+                            </div>                          
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__quote">
-                                    <blockquote>
-                                        Grab a friend or a few friends and make it a summer adventure that you will never forget.
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Definitions</h5>
+                                
                                 <div class="article__text">
-                                    <p>Two weeks later, all these children were again allowed to engage in the drawing activity. The result was interesting. It was found that the children who chose to draw for the reward showed less interest in drawing, and
-                                    also when the reward was withdrawn, these children simply stopped drawing. Children in the other two conditions showed no significant change in their interest in drawing. The result seems to suggest that the external
-                                    reward of a “Good Player” certificate destroyed the original intrinsic motivation for drawing.</p>
+                                    <p>Module in JavaScript is more or less just a collection of new features that were added in ES6. Yes there are plenty of libraries and frameworks like Webpack and Babel that can do the same thing but modern browsers can now support modules which can optimize load time without the use of other libraries. A few things to keep in mind with modules: 
+                                        <ul>
+                                            <li>Modules have a lexical top level scope so creating a variable with <code class="syntax">var</code> does not create a global variable </li>
+                                            <li><code class="syntax">import</code> and <code class="syntax">export</code> are only available within modules </li>
+                                            <li>You can export functions, variables and classes</li>
+                                        </ul>
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="article__shares">
-                        <div class="row">
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--twitter"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--facebook"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--pinterest"></i></a>
+                                <h6 class="article__heading">Strict Mode</h6>
+                                <div class="article__text">
+                                    <p>Imported modules are in strict mode whether you declare it or not. Before we jump into the code I wanted to review what strict mode is. <code class="syntax">“use strict”;</code> helps developers to write cleaner code. Here are a few benefits of using strict mode:  
+                                        <ul>
+                                            <li>It will throw errors that otherwise would be silent</li>
+                                            <li>It can fix mistakes that make it difficult for JS engines to perform optimizations</li>
+                                            <li>Can prohibit syntax that will likely be defined in future versions of ES6</li>
+                                            <li>Won’t allow you to use a variable without declaring it </li>
+                                            <li>Deleting a variable/object/function is not allowed</li>
+                                            <li>Duplicating a variable name is not allowed</li>
+                                            <li>Makes it easier to write secure JavaScript </li>
+                                        </ul>
+                                    </p>
+                                </div>                                    
+                            </div>
+                            </div>
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h6 class="article__heading">Export</h6>
+                                <div class="article__text">
+                                    <p><code class="syntax">export</code> is a key word used to share information across JavaScript scopes, which in our case will be another file. In the following example we will start in the <code class="files">Monster.js</code> file.  There are two types of exports: <code class="syntax">named</code> and <code class="syntax">default</code>. You can have multiple named exports per module but a default export can only have one export. First we will walk through a named export. In this example I have a variable, function and a class that I want to import into my <code class="files">main.js</code> file. To export all  of these I need to add the keyword <code class="syntax">export</code> before each declaration.
+                                    </p>
+                                    <img src="../img/importExport/importExport2.png">
+                                    <p>We can also clean up the syntax a little by exporting the features I want to share in one line separated by a comma and removing the export keyword before each definition. </p>
+                                    <img src="../img/importExport/importExport1.png">
+                                    <p>The other option for export is a default export where you can choose to rename whatever you are importing. To me this seemed confusing and I didn’t understand why you would change your own function/variable/class name. It was later pointed out to me that it could be useful if you were importing code that you didn’t write, you might want to change the name for it to make more sense in your specific application. This syntax is adding the keyword default after export so it would look something like this: 
+                                        </p>
+                                        <img src="../img/importExport/importExport4.png">
+                                        <p>You can also rename named exports but for this article I will just stick with the simple example of a named export.  </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h6 class="article__heading">Import</h6>
+                                <div class="article__text">
+                                    <p>We just set up the export of what we wanted to share with the import file but before we can access that information we need to tell our file what is coming in.  Its is kinda like the <code class="files">Monster.js</code> file threw us some data and now in the import file we need to catch it. Import is a statement that will go on the top line of your code where we use the keyword <code class="syntax">import</code>, tell the browser what it is we are importing and where it is from. Open back up the <code class="files">main.js</code> file. We are going to <code class="syntax">import</code> a variable, function and  Monster class to the <code class="files">main.js</code> file. The syntax breakdown is as follows: 
+                                            <code class="syntax">import { whatYouAreImporting } from ‘filepath.js’;</code> The file path is called the “module specifier” or the “import specifier”. After you have added the import statement(s) add a <code class="syntax">console.log("testing")</code> in to prove that you now have access to your exports. </p>
+                                    <img src="../img/importExport/importExport5.png">  
+                                    <p>If you want to import everything from <code class="files">Monster.js</code> we can use the import all syntax.  For example instead of specifically naming all of the imports like above, the syntax would be: <code class="syntax">import * as anyName from ‘./Monster.js’;</code> The <code class="syntax">*</code> means ‘all’ and <code class="syntax">anyName</code> can be any name but it represents the name of the module object being imported. The caveat here is that you need to use <code class="syntax">anyName</code> whenever you want to use that specific module object. Here is an example:</p>
+                                    <img src="../img/importExport/importExport6.png">
+                                    <p>Notice in the first example with the variable <code class="syntax">testVariable</code>, I needed to add <code class="syntax">myModule.testVariable</code> to gain access to that data. The examples I am providing is the very basic way to use import. I would recommend checking out the MDN docs on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">import</a> to see all the ways to use import, but this will get you started. </p>  
+                                </div>
+                            </div>
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                    <h6 class="article__heading">Conclusion</h6>
+                                    <div class="article__text">
+                                        <p>Today we talked about modules and the use of import and export. Using modules is a great way to keep you files clean and organized. I like to think of import and export as a way our files can communicate. We set up one JS file that will be reference in the HTML. We called this main.js and in the script tag we needed to add <code class="syntax">type=”module”</code>. This is the file that you will be importing to. We learned that you can import data individually or all with the * syntax.  Our Monster.js file is where we used the export syntax. We exported a variable, function and a class. Note that this file we did NOT add in the bottom of the HTML with a script tag. Try taking these steps and go a little bit further. Create a Hero.js file, add a Hero class and with a couple simple methods then import it to the main.js file just like we did with the Monster.js. Now in main.js you have access to your exports from Monster.js and Hero.js and you can have those two classes interacting in main.js. 
+                                        </p>  
+                                        <p>Check out my next article where I talk about event listeners and building a dynamic table with vanilla JS. At the very end of this series we will pull it all together and build tables from MockAPI that display the Monster and Hero stats using of course import and export. </p>    
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    
 
                                 
                             </div>
                         </div>
-                    </div> -->
+                    </div> 
                 </div>
             </div>
         </div>
