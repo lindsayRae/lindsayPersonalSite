@@ -9,10 +9,18 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <title>ES6 Fetch Method</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Theme -->
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">    
     <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
     <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="../css/codestyle.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -81,128 +89,149 @@
     <!-- end of socials -->
     <div class="article">
         <div class="container container--xl">
-            <div class="row">
+            <div class="row">                
                 <div class="col col--lg-10 col--lg-offset-1">
                     <h1 class="page__title article__title">ES6 Fetch Method</h1>
                     <div class="page__subtitle article__subtitle">
                         <div class="article__date">Jan 23, 2018</div>                       
                     </div>
                 </div>
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <div class="article__image">
+                        <figure>
+                            <img src="../img/fetch/fetch1920.png" alt="">
+                        </figure>
+                    </div>
+                </div>
                 <div class="col">
                     <div class="article__content">
                         <div class="row">
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__text article__text--large">
-                                    <p>What does it take to be successful? Ask around and you will find different answers to the formula of success. The truth is, success leaves clues and you can achieve the success in the area you desire by observing the
-                                        common qualities and principles.</p>
-                                </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__image">
-                                    <figure>
-                                        <img src="http://placehold.it/1920x1120" alt="">
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">How to stop living your life on autopilot</h5>
+                                <h5 class="article__heading">Introduction</h5>
                                 <div class="article__text">
-                                    <p>A smile can last a lifetime-if you take care of it. For that reason, it’s important for parents to instill good oral health habits in children as early as possible.</p>
-                                    <p>According to U.S. Surgeon General Richard H. Carmona’s “National Call to Action to Promote Oral Health” report, children lose more than 51 million school hours and adults lose more than 164 million work hours each year
-                                        due to dental disease or dental visits. The nation’s total bill for dental services was estimated to be more than $70.1 billion in 2002.</p>
+                                    <p>If you are new developer you have probably been learning a lot about HTML CSS and JavaScript. You have probably made small applications and or static web pages. At some point you are going to need to actually work with dynamic data from a server, or a RESTful API. Today we are going to take a quick look at what a RESTful API is, what the Fetch method is and then we will go through some examples using Fetch method with RESTful APIs.  </p>
+                                    <p>First let’s talk about what an API is and also what REST is. API is an Application Programming Interface which is a set of rules that allow  programs to communicate. A backend programmer will create the API so we on the front end can talk to the server and request data from it. REST stands for Representational State Transfer and is an architecture style. Think of it a your API’s blueprint, or set of guidelines of how to build it. We are not creating RESTful APIs today but we will be using them so it's good to understand what it is. </p>
+                                    <p>I am going to be using a great resource called <a href="https://www.mockapi.io" target="_blank">mockAPI</a>. It is a free tool where we can make RESTful API calls to so we can get a sense of realistic requests and responses from a server. Feel free to create an account and set up your own data or you can make calls to my customer endpoint that I am using in this articles examples.  We will be using the ES6 fetch methods to GET, POST, PUT and DELETE records from a customer database. Let’s take a look at these four verbs and what they mean:</p>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>HTTP Verbs</th>
+                                                <th>CRUD</th>
+                                                <th>Description</th>
+                                            </tr>
+                                            
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code class="verb">POST</code></td>
+                                                <td><code class="verb">CREATE</code></td>
+                                                <td>The POST method will CREATE a record in the database. If you wanted to add a new record to the table, this would be the request you would use.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code class="verb">GET</code></td>
+                                                <td><code class="verb">READ</code></td>
+                                                <td>This is how you would GET/READ data. You will send this GET request to the server so its knows to READ the database of whatever data you are requesting. This is what is sent back to you, normally as JSON data</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code class="verb">PUT</code></td>
+                                                <td><code class="verb">UPDATE</code></td>
+                                                <td>Here we can access a specific record in the table and change some of the data. Let’s say our customer moved. You don’t need to create a whole new record, just change (UPDATE) the address. </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code class="verb">DELETE</code></td>
+                                                <td><code class="verb">DELETE</code></td>
+                                                <td>Delete is an easy one to remember. This will delete the record from the table. </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+                            
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">What to look for in the first place?</h5>
+                                <h5 class="article__heading">FETCH Request</h5>
                                 <div class="article__text">
-                                    <p>Every new computer that’s brought home from the store has an operating system installed onto it. But what most new computer users don’t realize, is that without an operating system, that computer would be a simple shell
-                                        of possibilities. A powered computer lacking an operating system wouldn’t display anything more than a bunch of confusing text messages that describe the computer’s boot process. At the very end of this process,
-                                        the computer looks for an operating system and if not found, it will prompt the user to tell it where it is.</p>
+                                    <p>The Fetch Method is an easy way to send and receive data across a network. It returns what is referred to as a promise. With the fetch method we would use those HTTP verbs I just mentioned above. Before the release of ES6, developers used XMLHttpRequest/jQuery.ajax() to make these requests. Today we are going to walk through the ES6 syntax way. One of the nice things about fetch vs  XMLHttpRequest or jQuery is that if the promise returned is a <code class="error">404</code> or <code class="error">500</code>, the request won't just reject it. It accepts the promise but sets the <code>ok</code> status to <code>false</code>. For example, let’s say I have a bunch of errands to run, including taking my dog to the vet. To break up all of my errands I asked my husband to take the dog to the vet. He promises he will. This is great, I can go do all the other errands while he takes the dog to the vet. When we both get home, I ask: “Hey did you take the dog to the vet?”. He then responds with, “Yes I did and here is her prescription” or, “Yes, I did but they were closed” or “No I did not because the road was closed”.  He promised to take the dog to the vet, and whether or not he actually did get her there, he has a response to his promise.</p>
+                                    <h6 class="article__heading">GET Method</h6>
+                                    <p>Let’s take a look at a fetch request syntax.  We will use for the <code class="verb">GET</code> method to get the customers from our endpoint I set up in MockApi. The first version of this will be a little noisy, but I want to show you the response and the returned data. The second example of the same fetch will have cleaner syntax. If you would like to practice with my endpoint you can copy this url: <code>let url = `https://5b79be6cfb11c800145362ab.mockapi.io/customers`</code></p>
+                                    <img src="../img/fetch/fetch1.png">
+                                    <p>Take a look at line 9. Here we can <code class="syntax">console.log(response)</code> and see that response code of true/false in the code sample below on line 5.</p>
+                                    <img src="../img/fetch/fetch2.png"> 
+                                    <p>On line 10 of the fetch request we are returning the response and telling the application we want it in JSON format. Next we chain another <code class="syntax">.then()</code> and <code class="syntax">console.log(json)</code> the JSON. Below is part of that console.log():</p> 
+                                    <img src="../img/fetch/fetch3.png">  
+                                    <p>Lastly we are going to take the same code and clean up the syntax a bit. All I want to see at this point is the is my JSON data so I can take that data and eventually present it in the UI. If you have noticed, I have been using the arrow function syntax so when I move <code class="syntax">response.json</code> onto the same line as my arrow - it returns automatically and I no longer need the keyword <code class="syntax">return</code>.</p>                            
+                                    <img src="../img/fetch/fetch4.png">
+                                    <p>Congratulations! You now have dynamic data that you can display in your application. </p>
                                 </div>
-                            </div>
-                            <div class="col col--lg-10 col--lg-offset-1">
-                                <div class="article__slider slider" id="articleSlider">
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-1"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-2"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-3"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-4"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                    <div>
-                                        <figure>
-                                            <p><img src="http://placehold.it/1920x1120" alt="slide-5"></p>
-                                            <figcaption>Mountain Lake</figcaption>
-                                       </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">Become a travel pro in one easy lesson</h5>
-                                <div class="article__text">
-                                    <p>An even better vacation idea might be to do a tour of each of the Great Lakes. This way you can see the best things that each lake has to offer and you can even enjoy a few of the country’s finest states along the way.
-                                    If you are looking to do a Great Lakes tour, then talk with a travel agent about tours that may already exist. Each summer there are a variety of companies that offer a ten day tour up to a one month tour of all or part
-                                    of the Great Lakes. So see what best fits your schedule and your budget and then dive in. You will often find more reasonable deals when you plan you Great Lakes tour through an already established company.</p>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__quote">
-                                    <blockquote>
-                                        Grab a friend or a few friends and make it a summer adventure that you will never forget.
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__text">
-                                    <p>Two weeks later, all these children were again allowed to engage in the drawing activity. The result was interesting. It was found that the children who chose to draw for the reward showed less interest in drawing, and
-                                    also when the reward was withdrawn, these children simply stopped drawing. Children in the other two conditions showed no significant change in their interest in drawing. The result seems to suggest that the external
-                                    reward of a “Good Player” certificate destroyed the original intrinsic motivation for drawing.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="article__shares">
-                        <div class="row">
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--twitter"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--facebook"></i></a>
-                                </div>
-                                <div class="article__shares-icon">
-                                    <a href="#"><i class="icon icon--pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                                <div class="article__text">
+                                    <h6 class="article__heading">PUT Method</h6>
+                                    <p>Here we are going to PUT/UPDATE a specific customer by their id. Setup for the fetch request is essentially going to be the same but there are a couple other factors we need to think about:
+                                        <ul>
+                                            <li>Which customer are we going to update?</li>
+                                            <li>What about the customer do we want to update?</li>
+                                            <li>When we send this data to the server, what is it?</li>
+                                        </ul>
+                                    </p>
+                                    <p>Steps:</p>
+                                    <ol>
+                                        <li>Declare your function. </li>
+                                        <li>Declare an id variable and set it to the id of the customer you want to update</li>
+                                        <li>Declare the url and set it to the same as the <code class="verb">GET</code> except now we need to add the id so we can tell the server which specific customer we want to update. Here I am using template literals to accomplish this. Check out the Mozilla Docs if you are unfamiliar with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">template literal</a> (they are magical)</li>
+                                        <li>Next we are creating the JSON object that we are sending to the server. In this object you will see the properties of our customer object that we want to update. As a reminder, with your key value pairs, the key must match exactly how it is set up in mockAPI. If I want to change my customer phone number the key (in my case) MUST be ‘phone’ not “Phone”, “phoneNumber” or any other variation </li>
+                                        <li>Next we are telling the server the HTTP verb we are using, sending the new body of the specific id from the url (using JSON.stringify)  and lastly sending headers which is telling the server the content it will be receiving is JSON</li>
+                                    </ol>
+                                    <img src="../img/fetch/fetch5.png">
+                                    <p>My respone is successful and shows me the new data. In a real application I might refresh the browser to show this new data to the user</p>
+                                    <img src="../img/fetch/fetch6.png">
+                                </div>
 
-                                
-                            </div>
+                                <div class="article__text">
+                                    <h6 class="article__heading">POST Method</h6>
+                                    <p>Next, let's create a whole new customer. This will be very similar to the <code class="verb">PUT</code> but instead we will use the <code class="verb">POST</code> method. Take a minute to think about what we need to do here:
+                                        <ul>
+                                            <li>We need to add a customer to the same url we have been using</li>
+                                            <li>We need to give this new customer a unique ID which will be sent in the body as JSON along with the other customer information</li>
+                                            <li>Lastly we need to tell the server we are sending JSON in the headers again</li>
+                                        </ul>
+                                    </p>
+                                    <p>Steps:</p>
+                                    <ol>
+                                        <li>Declare your function </li>
+                                        <li>Set up the body as a JSON object with fields such as phone, name, state (or however you set it up in mockAPI) ** Note mockAPI creates the ID for you</li>
+                                        <li>Declare the url again but this time we are not sending an ID because it hasn't been created yet!  </li>
+                                        <li>Follow step 5 from the <code class="verb">PUT</code> but make sure to change the method to <code class="verb">POST</code></li>
+                                        <li>Call you function and check out in the console. You can now go back to mockAPI and find the new customer in your data or better yet, call your GET request again and if everything went well you will see your new customer! 
+                                        </li>
+                                    </ol>
+                                    <img src="../img/fetch/fetch7.png">
+                                </div>
+
+                                <div class="article__text">
+                                    <h6 class="article__heading">DELETE Method</h6>
+                                    <p>The last main HTTP call we will look at is the <code class="verb">DELETE</code>. Here we want to delete a whole customer record. We need to be able to identify which customer we want to delete so we need the ID again. Other than that, this will look very similar to our <code class="verb">GET</code> request. Try this one on your own before you read on and see if you can get it to work. Hint: don’t forget to tell the server what type of method this is and also look back through this blog to find out how you might want to tell the server which customer to delete.  
+                                    </p>
+                                    <img src="../img/fetch/fetch8.png">
+                                    <p>If you run your <code class="verb">GET</code> again you will see that the ID you delete is no longer there!</p>
+                                    <img src="../img/fetch/fetch9.png">
+                                </div>
+                            </div> 
+                            
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5 class="article__heading">Conclusion</h5>
+                                <div class="article__text">
+                                    <p>We covered a lot today so if there was a topic I didn't spend enough time on I encourage you to look up that topic in further depth separately. We talked about how we can use RESTful APIs to communicate with a server to get and send data that will make our applications more dynamic. To use the API we utilize the fetch method and then we broke down the main HTTP verbs: <code class="verb">GET</code>, <code class="verb">PUT</code>, <code class="verb">POST</code> and <code class="verb">DELETE</code>. Our goal here was to get successful responses and JSON data from mockAPI. In front end development, that’s half the battle! We need to get and send data back and forth to the server. Displaying it the data in a visually pleasing manner to the user is the other half but it starts with the data. Please let me know if you have any feedback or questions!  </p>
+
+                                </div>
+
                         </div>
-                    </div> -->
+                    </div>                
                 </div>
+
             </div>
-        </div>
+        </div> 
     </div>
+     
     <!-- footer -->
     
     <footer class="footer">
@@ -229,17 +258,20 @@
                     </div>            
                 </div>
             </div>
-        </footer>
+    </footer>
 
 
     <!-- end of footer -->
-
-    <!-- scripts -->
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Themse scripts -->
     
-    <script src="libs/jquery/jquery.min.js"></script>
-    <script src="libs/slick/slick.min.js"></script>
-    <script src="js/options.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../libs/jquery/jquery.min.js"></script>
+    <script src="../libs/slick/slick.min.js"></script>
+    <script src="../js/options.js"></script>
+    <script src="../js/main.js"></script>
     
     <!-- end of scripts -->
 </body>

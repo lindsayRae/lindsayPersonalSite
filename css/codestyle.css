@@ -17,7 +17,21 @@ code.object {
 .syntax {
   color:  rgb(93, 201, 5);
 }
+.verb {
+  color: rgb(0, 238, 255);
+}
 li {  
   font-size: 16px; 
   line-height: 32px;
+}
+
+thead {
+  font-size: 16px;
+}
+
+tbody {
+  font-size: 14px;
+}
+.table td {
+  padding: .75rem .5rem;
 }
