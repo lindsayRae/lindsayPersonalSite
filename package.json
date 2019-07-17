@@ -1,0 +1,24 @@
+{
+  "name": "lindsayAiello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.php"
+  },
+  "engines": {
+    "node": "10.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindsayRae/lindsayPersonalSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lindsayRae/lindsayPersonalSite/issues"
+  },
+  "homepage": "https://github.com/lindsayRae/lindsayPersonalSite#readme"
+}
