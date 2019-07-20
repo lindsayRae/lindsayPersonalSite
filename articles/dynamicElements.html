@@ -82,21 +82,21 @@
     <!-- end of socials -->
     <div class="article">
         <div class="container container--xl">
-            <div class="row">
-                
+            <div class="row">                
                 <div class="col col--lg-10 col--lg-offset-1">
                     <h1 class="page__title article__title">Building Dynamic ELements with JavaScript</h1>
                     <div class="page__subtitle article__subtitle">
-                        <div class="article__date">Jan 23, 2018</div>                       
+                        <div class="article__date">April 1st, 2019</div>                       
                     </div>
-                    <div class="col col--lg-10 col--lg-offset-1">
-                            <div class="article__image">
-                                <figure>
-                                    <img src="../img/dynamicElements/dynmaicElements1920.png" alt="">
-                                </figure>
-                            </div>
-                        </div>
                 </div>
+                <div class="col col--lg-10 col--lg-offset-1">
+                    <div class="article__image">
+                        <figure>
+                            <img src="../img/dynamicElements/dynmaicElements1920.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+                
                 <div class="col">
                     <div class="article__content">
                         <div class="row">                           
@@ -104,7 +104,7 @@
                                 <h5 class="article__heading">Intro</h5>
                                 <div class="article__text">
                                     <p>Today we are going to talk about building dynamic elements in Vanilla JavaScript! I am actually pretty excited about this topic because it is something that is extremely useful, yet I don't feel like there are many resources on the web on how to do this. We want our web application to be dynamic so and we want to understand how to do this with JavaScript before jumping into a frontend framework like React, Angular Vue.js or using (no longer needed) jQuery. We are going to take 3 very practical elements that I build all the time in my current Dev role and walk through the whole process. We will create a button for quick demo purposes then create an ordered list, a select dropdown and a table.</p>
-                                    <p>This article might get a little lengthy but it is mostly code examples. With each element that we are building we will first build it with a hard coded array of json and then we will build the exact same thing but with a fetch method pulling data from mockAPI. If you are unfamiliar with the fetch method you might want to read my article on Fetch Method with MockAPI first.</p>
+                                    <p>This article might get a little lengthy but it is mostly code examples. With each element that we are building we will first build it with a hard coded array of json and then we will build the exact same thing but with a fetch method pulling data from mockAPI. If you are unfamiliar with the fetch method you might want to read my article on <a href="./fetch.html" target="_blank">ES6 Fetch Method</a> first.</p>
                                 </div>
                             </div>
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
@@ -115,21 +115,21 @@
                                         Now that your new button is in a variable ‘myButton’ you can chain more methods on it like adding a class or setting an attribute. We will go over that more in the remaining examples in this article.
                                         </p>
                                         <p>So you have this button, but where are you going to put it? To add this new button to the DOM you need to append it to something with the following method: <code class="syntax">element.appendChild()</code>. In the English dictionary the definition of append is: <i>verb
-                                            add (something) as an attachment or supplement.</i> Let’s say you have a div with the ID of <code>‘myDiv’</code> and you want to nest your button to the div. The syntax would look like this: 
+                                            add (something) as an attachment or supplement.</i> Let’s say you have a div with the ID of <code>‘myDiv’</code> and you want to nest your button to the div. The syntax would look like this: <br>
                                             
                                             <code class="syntax">const parentDiv = document.getElementById(“myDiv”)</code>
                                             <code class="syntax">parentDiv.appendChild(‘myButton’)</code>
                                             </p>
-                                            <img>
-                                            <img>
-                                            <p>We are going to take this same principal and apply throughout our examples of building dynamic lists, selects and tables. Are you excited? Thought so.. Get your text editor ready with the following files:  home.html, style.css, list.js, select.js file and table.js. Be sure to link those files appropriately to your home.html file and then we are ready to go.</p>
+                                            <img src="../img/dynamicElements/btnDiv760x574.png">
+                                            <br>
+                                            <p>We are going to take this same principal and apply throughout our examples of building dynamic lists, selects and tables. Are you excited? Thought so.. Get your text editor ready with the following files: <code class="files">index.html</code>, <code class="files">style.css</code>, <code class="files">list.js</code>, <code class="files">select.js</code> and <code class="files">table.js</code> Be sure to link those files appropriately to your index.html file and then we are ready to go.</p>
                                 </div>
                             </div>
                             
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <h5 class="article__heading">Dynamic List</h5>
                                 <div class="article__text">
-                                    <p>If you read my last article on eventlisteners I had a “bonus’ code building a list with dynamic data. We are going to pick up there and I’ll go through a little more detail on how this list was created. Creating elements and appending them in JS can get confusing so it is best to plan it all out first. If you were to create an Ordered List in HTML it would look something like this: </p>
+                                    <p>If you read my last article on <a href="./eventListeners.html" target="_blank">JavaScript Event Listeners</a> I had a “bonus’ code building a list with dynamic data. We are going to pick up there and I’ll go through a little more detail on how this list was created. Creating elements and appending them in JS can get confusing so it is best to plan it all out first. If you were to create an Ordered List in HTML it would look something like this: </p>
                                     <img src="../img/dynamicElements/elements1.png">
                                     <p>This is perfectly fine to do in the right situation but what if you don’t know how many items will be in your list? This is why we create dynamic elements in JS.</p>
                                     <p>We are going to remove the <code class="syntax">&lt;ol&gt;</code> and <code class="syntax">&lt;li&gt;</code> from the HTML but add an id to the <code class="syntax">&lt;div&gt;</code> so when we create the <code class="syntax">&lt;ol&gt;</code> in JS we know where to put it. Before diving into the JS code, let’s talk about what we are going to do:
@@ -147,7 +147,7 @@
                                             <li>After the loop finishes we need to append the <code class="syntax">&lt;ol&gt;</code> to the <code class="syntax">&lt;div&gt;</code> </li>
                                         </ol>
                                     </p>
-                                        <img>
+                                        <img src="../img/dynamicElements/list1200x1433.png"><br>
                                         <p>At this point you should be familiar with nested elements. When you are building elements in JS you start from the outside or parent element and go down into the child element and then after the innermost child is complete (in this case the li) you need to then append from the inside and then move out back to the parent</p>
                                         <p>Here is my final JS for this list:</p>
                                         <img src="../img/dynamicElements/elements2.png">
@@ -181,7 +181,7 @@
                                         </ol>
                                     </p>
                                     <img src="../img/dynamicElements/elements6.png">
-                                    <p>Let’s transition our example to the next step of pulling in data from MockAPI using the fetch request and again adding a button to fire off the fetch and build the select dropdown.  For this example we are going to set the innerText of the option but we will also set the value. The array of json will return a value field so we want to set this with <code class="syntax">option.value = fruit.value</code>. You will notice that first fruit you see in your option is the first one that came back from the fetch request.  With options you can set an attribute of selected to any of fruits with a simple <code>if</code> statement to compare the option value. You will see this under <code>// Bonus logic!</code> In my code below. </p>
+                                    <p>Let’s transition our example to the next step of pulling in data from MockAPI using the fetch request and again adding a button to fire off the fetch and build the select dropdown.  For this example we are going to set the innerText of the option but we will also set the value. The array of json will return a value field so we want to set this with <code class="syntax">option.value = fruit.value</code>. You will notice that first fruit you see in your option is the first one that came back from the fetch request.  With options you can set an attribute of selected to any of fruits with a simple <code class="syntax">if</code> statement to compare the option value. You will see this under <code>// Bonus logic!</code> In my code below. </p>
                                     <img src="../img/dynamicElements/elements7.png">
                                 </div>
                             </div>
@@ -190,7 +190,7 @@
                                 <h5 class="article__heading">Dynamic Tables</h5>
                                 <div class="article__text">
                                     <p>Hopefully at this point you are getting the hang of dynamically creating elements and appending them to the parent element. We are now going to build a dynamic table which has more elements so can be slightly tricky but I am going to break it all down like the previous examples so let’s get started.</p>
-                                    <p>First take a look at a table on HTML. There are more nested elements that make up a table so mapping this out ahead of time is even more important. I did add some simple css to this table which you can grab from my GutHub but it is not necessary.</p>
+                                    <p>First take a look at a table on HTML. There are more nested elements that make up a table so mapping this out ahead of time is even more important. I did add some simple css to this table which you can grab from my GitHub but it is not necessary.</p>
                                     <img src="../img/dynamicElements/elements8.png">
                                     <p>Now lets walk through step by step what we need to  create, looking at the HTML too keep us on track. 
                                         <ol>
@@ -245,7 +245,13 @@
                                 <div class="article__text">
                                     <p>Today we talked about building dynamic elements with JavaScript. We talked about the main syntax needed which is <code class="syntax">document.createElement()</code> and <code class="syntax">element.appendChild()</code>. Our data came from hard coded arrays or arrays of JSON but we also incorporated the fetch request to get our data from mockAPI. We started small and built an ordered list, then a select and finished up with building the dynamic table. Please take these examples and break them, fix them and add to them. Try adding a class or an attributes in the forEach loop. I really hope found this article helpful and would love to hear any feedback! </p>
                                 </div>
-                            </div>    
+                            </div> 
+                            <div class="article__quote">
+                                <blockquote>
+                                    Learning to code is full of never ending Mini-Matrix Moments... Don't give up and you will start to see it!
+                                </blockquote>
+                                - Lindsay Aiello
+                            </div>     
                         </div>
                     </div>
                    
@@ -292,10 +298,10 @@
 
     <!-- scripts -->
     
-    <script src="libs/jquery/jquery.min.js"></script>
+    <!-- <script src="libs/jquery/jquery.min.js"></script>
     <script src="libs/slick/slick.min.js"></script>
     <script src="js/options.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
     
     <!-- end of scripts -->
 </body>
