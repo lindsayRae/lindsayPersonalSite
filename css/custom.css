@@ -39,8 +39,10 @@
   font-family: "Oswald", sans-serif; }
 
 /**** any text ****/
-body, p {
+body, p, h2 {
   font-family: "Istok Web", sans-serif; }
+
+
 
 /**** item of list ****/
 ul.list li {
