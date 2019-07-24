@@ -51,7 +51,8 @@
                         name: contact_name_val,
                         email: contact_email_val,
                         message: contact_message_val,
-                        emailAddress: contact_email
+                        // emailAddress: contact_email
+                        emailAddress: 'lbarnett712@gmail.com'
                     },
                     success: function () {
                         contact_notice.stop(true).hide().html(contact_success).fadeIn();
