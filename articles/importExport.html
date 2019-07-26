@@ -87,7 +87,7 @@
                 <div class="col col--lg-10 col--lg-offset-1">
                     <h1 class="page__title article__title">ES6 Import and Export</h1>
                     <div class="page__subtitle article__subtitle">
-                        <div class="article__date">Jan 23, 2018</div>                       
+                        <div class="article__date">July 1st, 2019</div>                       
                     </div>
                 </div>
                 <div class="col col--lg-10 col--lg-offset-1">
@@ -103,36 +103,17 @@
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <h5 class="article__heading">Introduction</h5>
                                 <div class="article__text">
-                                    <p>Today we are going to talk about JavaScript modules. This is a newer feature with ES6 and modules allow us the use of Import and Export in our JS files. If you want to keep you code base organized then read on because this is actually a pretty easy concept to get started with. I am going to go over why we would use modules with import and export, where we would use it. We will also review some sample code so you can understand the syntax and get started on your own project.</p>
+                                    <p>Today we are going to talk about JavaScript modules. This is a newer feature with ES6 and modules allow us the use of Import and Export in our JS files. If you want to keep you code base organized then read on because this is actually a pretty easy concept to get started with. I am going to go over why we would use modules with <code class="syntax">import</code> and <code class="syntax">export</code> and where we would use it in our code. We will also review some sample code so you can understand the syntax and get started on your own project.</p>
                                 </div>
                             </div>
                             
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <h5 class="article__heading">Why Modules?</h5>
                                 <div class="article__text">
-                                    <p>Think about any textbook you have read. Is all of the context in one big chapter or is it divided up into many chapters? I am assuming you answered that the textbook was divided up into chapters; we can think of code modules in a similar way. It is a way to organize your code and allows you to share data between scopes. Think of the term modules more as a concept and the specific syntax is when we would use the keywords <code class="syntax">import</code> and <code class="syntax">export</code>. At this point you are probably familiar with scope in JavaScript but if you need a quick refresher check out the MDN <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope" target="_blank">docs</a>. As your application grows, it can be harder to maintain when everything is in one giant file. Modularizing your code base is a clean way to group together related logic and can also be helpful when debugging. If you read my earlier article on JS Classes where I built a small game with a Monster Class, Hero Class and then the interacting logic, you might have noticed that the very small application grew pretty quickly. You can read that article <a href="" target="_blank">here</a> to take a quick glance at the code or just continue on with this article. I want to take that earlier example and break it up into 3 separate files: <code class="files">Monster.js</code>, <code classs="files">Hero.js</code>, and <code class="files">main.js</code>. This is where Import and Export will come into play. Its allows me to write my code in separate files but share what I need with other files.</p>
+                                    <p>Think about any textbook you have read. Is all of the context in one big chapter or is it divided up into many chapters? I am assuming you answered that the textbook was divided up into chapters; we can think of code modules in a similar way. It is a way to organize your code and allows you to share data between scopes. Think of the term modules more as a concept and the specific syntax is when we would use the keywords <code class="syntax">import</code> and <code class="syntax">export</code>. At this point you are probably familiar with scope in JavaScript but if you need a quick refresher check out the MDN <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope" target="_blank">docs</a>. As your application grows, it can be harder to maintain when everything is in one giant file. Modularizing your code base is a clean way to group together related logic and can also be helpful when debugging. If you read my earlier article on <a href="./classes.html" target="_blank">JavaScript Classes</a> where I built a small game with a Monster Class, Hero Class you might have noticed that the very small application grew pretty quickly. You can read that article <a href="" target="_blank">here</a> to take a quick glance at the code or just continue on with this article. I want to take that earlier example and break it up into 3 separate files: <code class="files">Monster.js</code>, <code class="files">Hero.js</code>, and <code class="files">main.js</code>. This is where Import and Export will come into play. Its allows me to write my code in separate files but share what I need with other files.</p>
                                 </div>
                             </div>
-                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
-                                <h5 class="article__heading">Getting Started</h5>
-                                <div class="article__text">
-                                    <p>This is the “easy” part. We will dive a little deeper into the syntax and many of the options a little later but your main setup is as follows:  
-                                        <ol>
-                                            <li>Set up an <code class="files">home.html</code> file with your normal boilerplate</li>
-                                            <li>Create a <code class="files">main.js</code> file and include in your HTML before your closing body tag</li>
-                                            <li>Create a <code class="files">Monster.js</code> file</li>
-                                            <li>Create a <code class="files">Hero.js</code> file </li>
-                                            <li>Notice I did not mention to add those last two js file in the <code class="files">home.html</code></li>
-                                            <li>Inside <code class="files">main.js</code> script tag add <code class="syntax">type=”module”</code>
-                                                <ul>
-                                                    <li><code class="syntax">type=”module”</code> is all you need for the browser to treat the external script (or inline script) as a ES6 module</li>
-                                                </ul>
-                                            </li>
-                                        </ol>
-                                    </p>
-                                    <img src="../img/importExport/importExport1.png">
-                                </div>
-                            </div>                          
+                                                  
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <h5 class="article__heading">Definitions</h5>
                                 
@@ -163,6 +144,27 @@
                                 </div>                                    
                             </div>
                             </div>
+
+                            <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
+                                <h5>Getting Started</h5>
+                                <div class="article__text">
+                                    <p>This is the “easy” part. We will dive a little deeper into the syntax and many of the options a little later but your main setup is as follows:  
+                                        <ol>
+                                            <li>Set up an <code class="files">home.html</code> file with your normal boilerplate</li>
+                                            <li>Create a <code class="files">main.js</code> file and include in your HTML before your closing body tag</li>
+                                            <li>Create a <code class="files">Monster.js</code> file</li>
+                                            <li>Create a <code class="files">Hero.js</code> file </li>
+                                            <li>Notice I did not mention to add those last two js file in the <code class="files">home.html</code></li>
+                                            <li>Inside <code class="files">main.js</code> script tag add <code class="syntax">type=”module”</code>
+                                                <ul>
+                                                    <li><code class="syntax">type=”module”</code> is all you need for the browser to treat the external script (or inline script) as a ES6 module</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </p>
+                                    <img src="../img/importExport/importExport1.png">
+                                </div>
+                            </div>  
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                 <h6 class="article__heading">Export</h6>
                                 <div class="article__text">
@@ -170,7 +172,7 @@
                                     </p>
                                     <img src="../img/importExport/importExport2.png">
                                     <p>We can also clean up the syntax a little by exporting the features I want to share in one line separated by a comma and removing the export keyword before each definition. </p>
-                                    <img src="../img/importExport/importExport1.png">
+                                    <img src="../img/importExport/importExport3.png">
                                     <p>The other option for export is a default export where you can choose to rename whatever you are importing. To me this seemed confusing and I didn’t understand why you would change your own function/variable/class name. It was later pointed out to me that it could be useful if you were importing code that you didn’t write, you might want to change the name for it to make more sense in your specific application. This syntax is adding the keyword default after export so it would look something like this: 
                                         </p>
                                         <img src="../img/importExport/importExport4.png">
@@ -186,15 +188,15 @@
                                     <img src="../img/importExport/importExport5.png">  
                                     <p>If you want to import everything from <code class="files">Monster.js</code> we can use the import all syntax.  For example instead of specifically naming all of the imports like above, the syntax would be: <code class="syntax">import * as anyName from ‘./Monster.js’;</code> The <code class="syntax">*</code> means ‘all’ and <code class="syntax">anyName</code> can be any name but it represents the name of the module object being imported. The caveat here is that you need to use <code class="syntax">anyName</code> whenever you want to use that specific module object. Here is an example:</p>
                                     <img src="../img/importExport/importExport6.png">
-                                    <p>Notice in the first example with the variable <code class="syntax">testVariable</code>, I needed to add <code class="syntax">myModule.testVariable</code> to gain access to that data. The examples I am providing is the very basic way to use import. I would recommend checking out the MDN docs on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">import</a> to see all the ways to use import, but this will get you started. </p>  
+                                    <p>Notice in the first example with the variable <code class="syntax">testVariable</code>, I needed to add <code class="syntax">myModule.testVariable</code> to gain access to that data. The examples I am providing is the very basic way to use import. I would recommend checking out the MDN docs on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">import</a> to see all the ways to use import, but my examples will get you started. </p>  
                                 </div>
                             </div>
                             <div class="col col--sm-10 col--sm-offset-1 col--md-10 col--md-offset-1 col--lg-8 col--lg-offset-2">
                                     <h6 class="article__heading">Conclusion</h6>
                                     <div class="article__text">
-                                        <p>Today we talked about modules and the use of import and export. Using modules is a great way to keep you files clean and organized. I like to think of import and export as a way our files can communicate. We set up one JS file that will be reference in the HTML. We called this main.js and in the script tag we needed to add <code class="syntax">type=”module”</code>. This is the file that you will be importing to. We learned that you can import data individually or all with the * syntax.  Our Monster.js file is where we used the export syntax. We exported a variable, function and a class. Note that this file we did NOT add in the bottom of the HTML with a script tag. Try taking these steps and go a little bit further. Create a Hero.js file, add a Hero class and with a couple simple methods then import it to the main.js file just like we did with the Monster.js. Now in main.js you have access to your exports from Monster.js and Hero.js and you can have those two classes interacting in main.js. 
+                                        <p>Today we talked about modules and the use of import and export. Using modules is a great way to keep you files clean and organized. I like to think of import and export as a way our files can communicate. We set up one JS file that will be reference in the HTML. We called this <code class="files">main.js</code> and in the script tag we needed to add <code class="syntax">type=”module”</code>. This is the file that you will be importing to. We learned that you can import data individually or all with the <code class="syntax">*</code> syntax.  Our <code class="files">Monster.js</code> file is where we used the <code class="syntax">export</code> syntax. We exported a variable, function and a class. Note that this file we did NOT add in the bottom of the HTML with a script tag. Try taking these steps and go a little bit further. Create a <code class="files">Hero.js</code> file, add a Hero class and with a couple simple methods then import it to the <code class="files">main.js</code> file just like we did with the <code class="files">Monster.js</code>. Now in <code class="files">main.js</code> you have access to your exports from <code class="files">Monster.js</code> and <code class="files">Hero.js</code> and you can have those two classes interacting in <code class="files">main.js</code>. Super cool right?! 
                                         </p>  
-                                        <p>Check out my next article where I talk about event listeners and building a dynamic table with vanilla JS. At the very end of this series we will pull it all together and build tables from MockAPI that display the Monster and Hero stats using of course import and export. </p>    
+                                      
                                     </div>
                                 </div>
                         </div>
