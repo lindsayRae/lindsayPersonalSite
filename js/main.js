@@ -52,7 +52,7 @@
                         email: contact_email_val,
                         message: contact_message_val,
                         // emailAddress: contact_email
-                        emailAddress: 'lbarnett712@gmail.com'
+                        emailAddress: 'lindsay.aiellodev@gmail.com'
                     },
                     success: function () {
                         contact_notice.stop(true).hide().html(contact_success).fadeIn();
